@@ -1,2 +1,3 @@
 # coleto
-Text comparison or collation tool based on Python
+
+This is a text comparison tool writen in Python. 

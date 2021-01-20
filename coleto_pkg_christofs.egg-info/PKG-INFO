@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: coleto-pkg-christofs
+Version: 0.1.0
+Summary: Tool for text comparison.
+Home-page: https://github.com/dh-trier/coleto
+Author: Christof Schöch
+Author-email: c.schoech@gmail.com
+License: UNKNOWN
+Description: # coleto
+        
+        This is a text comparison tool writen in Python. 
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
