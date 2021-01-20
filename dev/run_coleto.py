@@ -16,6 +16,7 @@ import preprocess
 import wdiff
 import analyze
 import statistics
+import visualize
 import progression
 
 
@@ -27,7 +28,8 @@ def main():
     preprocess.main(params)
     wdiff.main(params)
     analyze.main(params)
-    # statistics.main(params)
+    statistics.main(params)
+    # visualize.main(params)
     # progression.main(params)
 
 

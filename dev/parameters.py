@@ -57,7 +57,7 @@ def get_parameters():
     statistics_file = join(output_directory, "statistics.tsv")
     pivotstatistics_file = join(
         output_directory,
-        "martian_pivot-statistics.csv")
+        "pivot-statistics.tsv")
     typesplot1 = join(output_directory, "typesplot1.svg")
     typesplot2 = join(output_directory, "typesplot2.svg")
 

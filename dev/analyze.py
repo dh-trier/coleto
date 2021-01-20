@@ -159,12 +159,11 @@ def perform_itemanalysis(itemdata, item1, item2):
         itemdata["main-type"] = "whitespace"
         itemdata["category"] = "script-identifiable"
     # Test for difference in italics
-    elif re.sub(r"\*", "", item1) == re.sub(r"\*", "", item2):
+    elif re.sub(r"[\*_]", "", item1) == re.sub(r"[\*_]", "", item2):
         itemdata["italics"] = 1
         itemdata["main-type"] = "italics"
         itemdata["category"] = "script-identifiable"
     # Test for difference in punctuation
-    # FIXIT: Doesn't work like it should. Doesn't find punctuation.
     elif re.sub(r"[\",';:!?\.\(\)]", "", item1) == \
             re.sub(r"[\",';:!?\.\(\)]", "", item2):
         itemdata["punctuation"] = 1
@@ -243,7 +242,8 @@ def analyse_diffs(difftext):
     allitemdata = pd.DataFrame(allitemdata, columns=columns)
     # print(allitemdata)
     if allitemdata.shape[0] > 1:
-        print("Looking good: some differences have been analysed.")
+        print("Looking good: " + str(allitemdata.shape[0])
+              + " differences have been analysed.")
     else:
         print("Error! No differences have been analysed.")
     return allitemdata
