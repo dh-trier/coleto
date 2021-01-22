@@ -86,7 +86,7 @@ def main(params):
     other = apply_smoothing(data["other"], params["smoothing"])
     config = define_config()
     mystyle = define_style()
-    plot = pygal.StackedBar(config, range=(0, 60), style=mystyle)  # 60
+    plot = pygal.StackedBar(config, style=mystyle)  # 60
     plot.title = "Edit intensity across the text"
     plot.y_title = "Levenshtein distance (smoothed)"
     plot.x_title = "Sentences in the text"

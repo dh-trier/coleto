@@ -21,7 +21,8 @@ import sys
 # ===========================================================
 # USER-DEFINED PARAMETERS
 working_directory = join("..", "..", "coleto-data", "")
-dataset_directory = join(working_directory, "Doyle1")
+dataset_directory = join(working_directory, "Doyle")
+smoothing = True
 # ============================================================
 
 
@@ -79,7 +80,7 @@ def get_parameters():
             "diff-complex-statistics.tsv"),
         "simpletypesplot": join(output_directory, "simple-types-plot.svg"),
         "complextypesplot": join(output_directory, "complex-types-plot.svg"),
-        "smoothing": False
+        "smoothing": smoothing
          }
 
     return params

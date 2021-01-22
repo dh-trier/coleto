@@ -33,7 +33,9 @@ def check_results(wdiffed_file):
     time.sleep(2)
     with open(wdiffed_file, "r", encoding="utf8") as infile: 
         wdiffed = infile.read()
-        diffs = re.findall(r"[\[\{]", wdiffed)
+        insertions = re.findall(r"\{\+", wdiffed)
+        deletions = re.findall(r"\[\-", wdiffed)
+        diffs = insertions + deletions
         # print(diffs)
         if len(diffs) > 5: 
             print("Looking good: at least " + str(len(diffs)//2) + " differences have been found.")

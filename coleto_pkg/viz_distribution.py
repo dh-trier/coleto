@@ -95,7 +95,7 @@ def make_barchart1(data, typesplot):
 def load_pivotdata(pivotstatistics_file): 
     with open(pivotstatistics_file, "r", encoding="utf8") as infile: 
         complexdata = pd.read_csv(infile, sep="\t", index_col=0)
-        # print(complexdata.head())
+        #print(complexdata.head())
         if complexdata.shape[0] > 2: 
             print("Looking good: complex edit type data has been loaded.")
         else: 
