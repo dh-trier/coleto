@@ -26,7 +26,8 @@ http://www.pygal.org/en/stable/installing.html
 
 2) Download two folders and place them both in one directory:
 
-https://github.com/dh-trier/coleto.git 
+https://github.com/dh-trier/coleto.git
+
 https://github.com/dh-trier/coleto-data.git
 
 3) run the run_coleto.py script, which is in the coleto_main directory
