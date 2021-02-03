@@ -193,12 +193,14 @@ def perform_itemanalysis(itemdata, item1, item2):
         itemdata["numbers"] = 1
         itemdata["main-type"] = "numbers"
         itemdata["category"] = "script-identifiable"
-    # Test for whether the length is substantially reduced
+    # Test for whether the length in characters is substantially reduced
+    # The definition of "substantially" is: at least 3 characters shorter.
     elif len(item1) > len(item2)+3:
         itemdata["condensation"] = 1
         itemdata["main-type"] = "condensation"
         itemdata["category"] = "other"
-    # Test for whether the length is substantially expanded
+    # Test for whether the length in characters is substantially expanded.
+    # The definition of "substantially" is: at least 3 characters longer.
     elif len(item2) > len(item1)+3:
         itemdata["expansion"] = 1
         itemdata["main-type"] = "expansion"
