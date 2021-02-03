@@ -25,7 +25,12 @@ def read_datafile(tsvfile):
     """Read a TSV file with data."""
     with open(tsvfile, "r") as infile:
         data = pd.read_csv(infile, sep="\t")
-        # print(data.head(10))
+        if data.shape[1] > 2: 
+            print("Looking good: a TSV file with " + str(data.shape[1]) 
+            + " columns has been loaded.")
+        else: 
+            print("Warning: An attempt to read " + str(basename(tsvfile))
+            + " failed.")
         return data
 
 

@@ -20,8 +20,8 @@ import sys
 
 # ===========================================================
 # USER-DEFINED PARAMETERS
-working_directory = join("..", "..", "coleto-data", "")
-dataset_directory = join(working_directory, "Doyle")
+working_directory = join("..", "coleto-data", "")
+dataset_directory = join(working_directory, "Loaisel")
 smoothing = True
 # ============================================================
 
@@ -38,9 +38,12 @@ def get_parameters():
     # Generated arameters: input files, sentence-split files.
     input_directory = join(dataset_directory, "input", "")
     output_directory = join(dataset_directory, "output", "")
+    # print("This is the input directory: ", input_directory)
     input_files = []
     for file in glob.glob(join(input_directory, "*.txt")):
         input_files.append(file)
+    # print(len(input_files))
+    # print(input_files)
     if len(input_files) == 2:
         print("Looking good: found two files to deal with.")
     else:

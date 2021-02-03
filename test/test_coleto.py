@@ -86,5 +86,5 @@ def test_text_analyze_itemanalysis_1():
 if __name__ == '__main__':
     test_always_passes()
     test_sentence_splitter()
-    test_text_analyze_itemanalysis_insertion_1()
+    test_text_analyze_itemanalysis_1()
 
