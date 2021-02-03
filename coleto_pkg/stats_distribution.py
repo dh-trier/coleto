@@ -43,18 +43,20 @@ def lev_stats(levdata, statistics):
 
 def ana_stats(anadata, statistics):
     # print(anadata.columns)
-    # FIXIT: Could be written more succinctly.
-    statistics["condensation"] = sum(anadata["condensation"])
-    statistics["expansion"] = sum(anadata["expansion"])
-    statistics["deletion"] = sum(anadata["deletion"])
+    items = ["condensation",
+             "expansion",
+             "deletion",
+             "insertion",
+             "capitalization",
+             "whitespace",
+             "italics",
+             "punctuation",
+             "hyphenation",
+             "numbers"]
+    for item in items: 
+        statistics[item] = sum(anadata[item])
+    # FIXIT: This implicit renaming here is strange. 
     statistics["to be confirmed"] = sum(anadata["tbc"])
-    statistics["insertion"] = sum(anadata["insertion"])
-    statistics["capitalization"] = sum(anadata["capitalization"])
-    statistics["whitespace"] = sum(anadata["whitespace"])
-    statistics["italics"] = sum(anadata["italics"])
-    statistics["punctuation"] = sum(anadata["punctuation"])
-    statistics["hyphenation"] = sum(anadata["hyphenation"])
-    statistics["numbers"] = sum(anadata["numbers"])
     statistics["script-identifiable"] = statistics["capitalization"]\
         + statistics["whitespace"]\
         + statistics["italics"]\
