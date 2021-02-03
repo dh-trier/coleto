@@ -42,17 +42,20 @@ def read_text(file):
 def sentence_splitter(input_file, text):
     """Splits a text string into individual sentences."""
     sentences = nltk.sent_tokenize(text)
-    if len(sentences) > 5:
-        print("Looking good: " + str(os.path.basename(input_file)) + " has " 
-        + str(len(sentences)) + " sentences.")
-    elif len(sentences) > 2: 
-        print("Warning: are there really only " + str(len(sentences)) 
-        + " sentences in " + str(os.path.basename(input_file)) + "?")
+    basename = str(os.path.basename(input_file))
+    num_sentences = len(sentences)
+    if num_sentences > 5:
+        print("Looking good: " + basename + " has " 
+        + str(num_sentences) + " sentences.")
+    elif num_sentences > 1: 
+        print("Warning: are there really only " + str(num_sentences) 
+        + " sentences in " + basename + "? "
+        + "\nThis tool works best with more text.")
     else:
-        sys.exit("ERROR! Only " + str(len(sentences)) 
-        + " sentences were found.\nIs there text in your input files?")
+        sys.exit("ERROR! Only " + str(num_sentences) 
+        + " sentence was found.\nIs there text in your input files?")
     sentences = "\n".join(sentences)
-    return sentences
+    return sentences, num_sentences
 
 
 def save_sentences(sentences, filename):
@@ -68,8 +71,8 @@ def save_sentences(sentences, filename):
 def main(params):
     print("\n== coleto: running text_preprocess. ==")
     text1 = read_text(params["input_file1"])
-    sentences1 = sentence_splitter(params["input_file1"], text1)
+    sentences1, num_sentences1 = sentence_splitter(params["input_file1"], text1)
     save_sentences(sentences1, params["sentences_file1"])
     text2 = read_text(params["input_file2"])
-    sentences2 = sentence_splitter(params["input_file2"], text2)
+    sentences2, num_sentences2 = sentence_splitter(params["input_file2"], text2)
     save_sentences(sentences2, params["sentences_file2"])
