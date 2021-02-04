@@ -1,4 +1,8 @@
-# coleto howto
+# HOW-TO for coleto, the text comparison tool
+
+Coleto is a text comparison, or collation, tool written in Python and using wdiff in the background. 
+
+For more information on the features and context of coleto, see the [README](https://github.com/dh-trier/coleto/blob/main/README.md). 
 
 ## Requirements
 
