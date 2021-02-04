@@ -1,4 +1,4 @@
-# HOW-TO for coleto, the text comparison tool
+# HOW-TO for coleto
 
 Coleto is a text comparison, or collation, tool written in Python and using wdiff in the background. 
 
