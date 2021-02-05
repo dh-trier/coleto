@@ -103,6 +103,7 @@ Open `run_coleto.py` to execute the pipeline.
 1. `viz_progression`: This submodule uses `pygal`to create a stacked barchart showing how the amount of changes varies over the texts' development from beginning to end.
 1. `stats_distribution`: This submodule calculates how many instances of different types of changes detected by the `text_analyze`step. 
 1. `viz_distribution`: This submodule uses `pygal` to create some barcharts showing the distribution of types of changes. 
+1. `meta_documentation`: This submodule writes all the parameters of the current run to a timestamped file along with very basic summary statistics. 
 
 ### The analysis step 
 
