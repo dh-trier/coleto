@@ -33,11 +33,12 @@ def get_difftext(wdiffed_file):
         difftext = re.split("\n", difftext)
         if len(difftext) > 4:
             print("Looking good: there are " + str(len(difftext)) + " lines.")
-        elif len(difftext) > 2: 
-            print("Warning: are there really only " + str(len(difftext)) + " lines?")
-        else: 
-            sys.exit("ERROR! There seem to be only very few lines (" 
-            + str(len(difftext)) + ") to analyze. Stopping.")
+        elif len(difftext) > 2:
+            print("Warning: are there really only "
+                  + str(len(difftext)) + " lines?")
+        else:
+            sys.exit("ERROR! There seem to be only very few lines ("
+                     + str(len(difftext)) + ") to analyze. Stopping.")
         return difftext
 
 
@@ -260,7 +261,7 @@ def analyse_diffs(difftext):
     return allitemdata
 
 
-def save_summary(difftext, analysisdata, analysissummary_file): 
+def save_summary(difftext, analysisdata, analysissummary_file):
     """Saves very basic summary data to file for futher use."""
     numlines = len(difftext)
     numdifferences = analysisdata.shape[0]
@@ -274,8 +275,8 @@ def save_analysis(analysisresults, analysisfile):
     """Saves the detailed analysis results to a TSV file."""
     with open(analysisfile, "w", encoding="utf8") as outfile:
         analysisresults.to_csv(outfile, sep="\t", index=False)
-    print("The analysis results have been saved to " 
-    + basename(analysisfile) + ".")
+    print("The analysis results have been saved to "
+          + basename(analysisfile) + ".")
 
 
 # === Main ===
