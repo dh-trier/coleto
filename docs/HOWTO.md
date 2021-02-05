@@ -115,8 +115,8 @@ The main contribution of coleto is that it takes a good look at each individual 
 1. `version2`: The string in version 2 of the text. 
 1. `lev-dist`: The levenshtein difference between the two strings. 
 1. `lev-dist-class`: The class assigned to the levenshtein distance (minor or major, with a cut-off at a levenshtein distance of 5). 
-1. `lendiff-chars`: The absolute difference in length between the two strings in characters. 
-1. `lendiff-words`: The absolute difference in length between the two strings expressed in words. 
+1. `lendiff-chars`: The (positive or negative) difference in length between the two strings in characters. 
+1. `lendiff-words`: The (positive or negative) difference in length between the two strings expressed in words. 
 1. `condensation`: Positive if the length in characters of string 2, when compared to string 1, is smaller by at least 3 characters. 
 1. `expansion`: Positive if the length in characters of string 2, when compared to string 1, is larger by at least 3 characters. 
 1. `insertion`: Positive if the length of string 1 is 0. 
