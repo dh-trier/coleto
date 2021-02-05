@@ -36,6 +36,8 @@ To download the NLTK punkt model, on the command line / terminal, enter: `python
 
 #### On Linux 
 
+TBD.
+
 #### On OSX
 
 For wdiff: 
@@ -44,9 +46,11 @@ For wdiff:
 
 #### On Windows
 
+TBD.
+
 ### (A) Install as a package
 
-(Coming soon.)
+(Coming soon to pypi.)
 
 ### Alternatively, install directly via the repos
 
@@ -102,7 +106,7 @@ Open `run_coleto.py` to execute the pipeline.
 
 ### The analysis step 
 
-The main contribution of coleto is that it takes a good look at each individual instance of a difference between the two text versions and attempts to describe it quantitatively and categorize it. The following is a list of things that are checked and registered. 
+The main contribution of coleto is that it takes a good look at each individual instance of a difference between the two text versions and attempts to describe it quantitatively and categorize it. The following is a list of things that are checked and registered. (More are in development.)
 
 **Quantitative / descriptive aspects**
 
