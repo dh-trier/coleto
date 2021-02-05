@@ -76,14 +76,15 @@ def get_parameters():
         "analysissummary_file": join(output_directory, "diff-summary.tsv"),
         "levdists_file": join(output_directory, "diff-levenshtein-data.tsv"),
         "progressionplot": join(output_directory,
-            "edits-over-textual-progression.svg"),
-        "simplestatistics_file": join(output_directory, 
-            "diff-simple-statistics.tsv"),
+                                "edits-over-textual-progression.svg"),
+        "simplestatistics_file": join(output_directory,
+                                      "diff-simple-statistics.tsv"),
         "complexstatistics_file": join(output_directory,
-            "diff-complex-statistics.tsv"),
+                                       "diff-complex-statistics.tsv"),
         "simpletypesplot": join(output_directory, "simple-types-plot.svg"),
         "complextypesplot": join(output_directory, "complex-types-plot.svg"),
-        "smoothing": smoothing
+        "documentation_name": join(output_directory, "documentation"),
+        "smoothing": smoothing,
          }
 
     return params

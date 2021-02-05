@@ -266,9 +266,10 @@ def save_summary(difftext, analysisdata, analysissummary_file):
     numlines = len(difftext)
     numdifferences = analysisdata.shape[0]
     analysissummary = {"numlines": numlines, "numdifferences": numdifferences}
-    analysissummary = pd.DataFrame(analysissummary, index=["values"])
+    analysissummary_df = pd.DataFrame(analysissummary, index=["values"])
     with open(analysissummary_file, "w", encoding="utf8") as outfile:
-        analysissummary.to_csv(outfile, sep="\t")
+        analysissummary_df.to_csv(outfile, sep="\t")
+    return analysissummary
 
 
 def save_analysis(analysisresults, analysisfile):
@@ -285,5 +286,7 @@ def main(params):
     print("\n== coleto: running text_analyze. ==")
     difftext = get_difftext(params["wdiffed_file"])
     analysisresults = analyse_diffs(difftext)
-    save_summary(difftext, analysisresults, params["analysissummary_file"])
+    analysissummary = save_summary(difftext, analysisresults,
+                                   params["analysissummary_file"])
     save_analysis(analysisresults, params["analysis_file"])
+    return analysissummary
