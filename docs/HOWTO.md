@@ -32,32 +32,32 @@ Using pip, install all Python packages listed above.
 
 To download the NLTK punkt model, on the command line / terminal, enter: `python3`, then `import nltk`, then `nltk.download('punkt')`. 
 
-### Install Non-Python requirements
+### Install wdiff
 
 #### On Linux 
 
-TBD.
+In the terminal, do the following: 
+
+- `sudo apt-get update`
+- `sudo apt-get install wdiff`. 
 
 #### On OSX
 
-For wdiff: 
-- This requires installation of Homebrew: https://brew.sh
-- Then, do `brew install wdiff`. 
+Installation of wdiff requires installation of Homebrew: https://brew.sh. 
+
+Then, do `brew install wdiff`. 
 
 #### On Windows
 
-TBD.
+See this page for instructions on how to download and install wdiff for Windows: https://www.di-mgt.com.au/wdiff-for-windows.html
 
 ### Install directly via the repos
 
-Download as a ZIP archive, or clone using Git, the following two repositories: two folders and place them both in one directory:
+Download as a ZIP archive, or clone using Git, the following repository: https://github.com/dh-trier/coleto.git. 
 
-* https://github.com/dh-trier/coleto.git
-* https://github.com/dh-trier/coleto-data.git
+If you downloaded the ZIP archive, unzip the file and place the contents a directory of your choice. 
 
-If you downloaded the ZIP archive, unzip both files and place the contents in the same directory. In that directory, you should see two folders: `coleto` and `coleto-data` side by side. 
-
-If you cloned the repositories, just make sure you clone both to the same directory, so that again, you have the two folders side by side. This will ensure coleto easily finds the data. 
+If you cloned the repository, just make sure you cloned it to a location where you can run it from. 
 
 ## Usage
 
