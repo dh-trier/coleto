@@ -1,0 +1,10 @@
+---
+# coleto configuration
+# (Always maintain whitespace after ":"!)
+
+working_directory: ".."
+dataset: Doyle
+language: en
+smoothing: True
+levenshtein_cutoff: 5
+documentation_mode: minimal

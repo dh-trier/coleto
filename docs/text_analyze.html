@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>coleto.text_analyze API documentation</title>
+<meta name="description" content="Loads the file containing the collation results from Wdiff.
+Then, identifies various kinds of differences that can be observed.
+Assembles this …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>coleto.text_analyze</code></h1>
+</header>
+<section id="section-intro">
+<p>Loads the file containing the collation results from Wdiff.
+Then, identifies various kinds of differences that can be observed.
+Assembles this information for each difference between the two texts.</p>
+<p>Part of coleto, see: <a href="https://github.com/dh-trier/coleto.">https://github.com/dh-trier/coleto.</a></p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# Author: Christof Schöch, 2016-2021.
+
+&#34;&#34;&#34;
+Loads the file containing the collation results from Wdiff.
+Then, identifies various kinds of differences that can be observed.
+Assembles this information for each difference between the two texts.
+
+Part of coleto, see: https://github.com/dh-trier/coleto.
+&#34;&#34;&#34;
+
+
+# === Imports ===
+
+import re
+import pandas as pd
+import Levenshtein as ld
+import sys
+from os.path import basename
+
+
+# === Functions ===
+
+def get_difftext(wdiffed_file):
+    &#34;&#34;&#34;Loads the file containing the collation results from Wdiff.
+    Returns a list of lines with one or several differences.
+    In our case, each line corresponds to one sentence.&#34;&#34;&#34;
+    # print(&#34;\n-- get_difftext&#34;)
+    with open(wdiffed_file, &#34;r&#34;) as infile:
+        difftext = infile.read()
+        # print(difftext)
+        difftext = re.split(&#34;\n&#34;, difftext)
+        if len(difftext) &gt; 4:
+            print(&#34;Looking good: there are &#34; + str(len(difftext)) + &#34; lines.&#34;)
+        elif len(difftext) &gt; 2:
+            print(&#34;Warning: are there really only &#34;
+                  + str(len(difftext)) + &#34; lines?&#34;)
+        else:
+            sys.exit(&#34;ERROR! There seem to be only very few lines (&#34;
+                     + str(len(difftext)) + &#34;) to analyze. Stopping.&#34;)
+        return difftext
+
+
+def clean_line(line):
+    &#34;&#34;&#34;Cleans up the lines a little bit.&#34;&#34;&#34;
+    line = re.sub(&#34;]{&#34;, &#34;] {&#34;, line)
+    line = re.sub(r&#34;(-\]) ([^{])&#34;, &#34;\\1 {++} \\2&#34;, line)
+    line = re.sub(r&#34;(\w) ({)&#34;, &#34;\\1 [--] \\2&#34;, line)
+    return line
+
+
+def create_pairs(line):
+    &#34;&#34;&#34;
+    For every line, identifies each difference
+    Then, collects each pair of differences separately.
+    Returns a list of string pairs (one difference each)
+    #==============================================================#
+    #====    Much better, but still not entirely correct!      ====#
+    #==============================================================#
+    &#34;&#34;&#34;
+    pairs = []
+    somepairs = re.findall(r&#34;\[-.*?\-\] {\+.*?\+}&#34;, line, re.DOTALL)
+    pairs.extend(somepairs)
+    if len(pairs) == 0:
+        somepairs = re.findall(r&#34;\[-.*?\-\]&#34;, line, re.DOTALL)
+        somepairs = [item + &#34; {++}&#34; for item in somepairs]
+        pairs.extend(somepairs)
+    if len(pairs) == 0:
+        somepairs = re.findall(r&#34;{\+.*?\+}&#34;, line, re.DOTALL)
+        somepairs = [&#34;[--] &#34; + item for item in somepairs]
+        pairs.extend(somepairs)
+    return pairs
+
+
+def prepare_item(item):
+    &#34;&#34;&#34;
+    Prepares the items (each one pair from the list of pairs) to be compared.
+    Returns the two items as separate strings.
+    &#34;&#34;&#34;
+    item = re.split(r&#39;\] {&#39;, item)
+    item1 = item[0][2:-1]
+    item2 = item[1][1:-2]
+    return item1, item2
+
+
+def define_itemdata(itemid, item1, item2):
+    &#34;&#34;&#34;
+    Defines the various pieces of information to be collected for each pair.
+    Returns a dictionary that already includes the pairs&#39; text but not data.
+    &#34;&#34;&#34;
+    itemdata = {&#34;itemid&#34;: itemid,
+                &#34;version1&#34;: item1,
+                &#34;version2&#34;: item2,
+                &#34;lev-dist&#34;: &#34;NA&#34;,
+                &#34;lev-dist-class&#34;: &#34;NA&#34;,
+                &#34;lendiff-chars&#34;: &#34;NA&#34;,
+                &#34;lendiff-words&#34;: &#34;NA&#34;,
+                &#34;category&#34;: &#34;NA&#34;,
+                &#34;main-type&#34;: &#34;NA&#34;,
+                &#34;insertion&#34;: 0,
+                &#34;deletion&#34;: 0,
+                &#34;capitalization&#34;: 0,
+                &#34;whitespace&#34;: 0,
+                &#34;italics&#34;: 0,
+                &#34;punctuation&#34;: 0,
+                &#34;hyphenation&#34;: 0,
+                &#34;numbers&#34;: 0,
+                &#34;condensation&#34;: 0,
+                &#34;expansion&#34;: 0,
+                &#34;tbc&#34;: 0}
+    return itemdata
+
+
+def define_columnorder():
+    &#34;&#34;&#34;
+    Defines the order of the columns, purely for display.
+    Returns a list.
+    &#34;&#34;&#34;
+    columns = [&#34;itemid&#34;,
+               &#34;version1&#34;,
+               &#34;version2&#34;,
+               &#34;category&#34;,
+               &#34;main-type&#34;,
+               &#34;lev-dist&#34;,
+               &#34;lev-dist-class&#34;,
+               &#34;lendiff-chars&#34;,
+               &#34;lendiff-words&#34;,
+               &#34;insertion&#34;,
+               &#34;deletion&#34;,
+               &#34;capitalization&#34;,
+               &#34;whitespace&#34;,
+               &#34;italics&#34;,
+               &#34;punctuation&#34;,
+               &#34;hyphenation&#34;,
+               &#34;numbers&#34;,
+               &#34;condensation&#34;,
+               &#34;expansion&#34;,
+               &#34;tbc&#34;]
+    return columns
+
+
+def perform_itemanalysis(itemdata, item1, item2, params):
+    &#34;&#34;&#34;
+    This function performs the actual analysis.
+    The procedure is applied to each pair in each line.
+    For the most part, a substitution test is done and if successful,
+    the corresponding category is assigned.
+    More than one category can be assigned to an item.
+    &#34;&#34;&#34;
+    # Test for insertion of new word(s)
+    if len(item1) == 0:
+        itemdata[&#34;insertion&#34;] = 1
+        itemdata[&#34;main-type&#34;] = &#34;insertion&#34;
+        itemdata[&#34;category&#34;] = &#34;other&#34;
+    # Test for complete deletion of word(s)
+    elif len(item2) == 0:
+        itemdata[&#34;deletion&#34;] = 1
+        itemdata[&#34;main-type&#34;] = &#34;deletion&#34;
+        itemdata[&#34;category&#34;] = &#34;other&#34;
+    # Test for difference in upper/lower case
+    elif item1.lower() == item2.lower():
+        itemdata[&#34;capitalization&#34;] = 1
+        itemdata[&#34;main-type&#34;] = &#34;capitalization&#34;
+        itemdata[&#34;category&#34;] = &#34;script-identifiable&#34;
+    # Test for difference in whitespace
+    elif re.sub(&#34; &#34;, &#34;&#34;, item1) == re.sub(&#34; &#34;, &#34;&#34;, item2):
+        itemdata[&#34;whitespace&#34;] = 1
+        itemdata[&#34;main-type&#34;] = &#34;whitespace&#34;
+        itemdata[&#34;category&#34;] = &#34;script-identifiable&#34;
+    # Test for difference in italics
+    elif re.sub(r&#34;[\*_]&#34;, &#34;&#34;, item1) == re.sub(r&#34;[\*_]&#34;, &#34;&#34;, item2):
+        itemdata[&#34;italics&#34;] = 1
+        itemdata[&#34;main-type&#34;] = &#34;italics&#34;
+        itemdata[&#34;category&#34;] = &#34;script-identifiable&#34;
+    # Test for difference in punctuation
+    elif re.sub(r&#34;[\&#34;,&#39;;:!?\.\(\)]&#34;, &#34;&#34;, item1) == \
+            re.sub(r&#34;[\&#34;,&#39;;:!?\.\(\)]&#34;, &#34;&#34;, item2):
+        itemdata[&#34;punctuation&#34;] = 1
+        itemdata[&#34;main-type&#34;] = &#34;punctuation&#34;
+        itemdata[&#34;category&#34;] = &#34;script-identifiable&#34;
+    # Test for difference in hyphenation
+    elif re.sub(r&#34;\-&#34;, &#34;&#34;, item1) == re.sub(&#34; &#34;, &#34;&#34;, item2):
+        itemdata[&#34;hyphenation&#34;] = 1
+        itemdata[&#34;main-type&#34;] = &#34;hyphenation&#34;
+        itemdata[&#34;category&#34;] = &#34;script-identifiable&#34;
+    # Test for difference in hyphenation
+    elif re.sub(&#34; &#34;, &#34;&#34;, item1) == re.sub(r&#34;\-&#34;, &#34;&#34;, item2):
+        itemdata[&#34;hyphenation&#34;] = 1
+        itemdata[&#34;main-type&#34;] = &#34;hyphenation&#34;
+        itemdata[&#34;category&#34;] = &#34;script-identifiable&#34;
+    # Test for difference involving (but not limited to) numbers
+    elif bool(re.search(r&#39;\d&#39;, item1+item2)) is True:
+        itemdata[&#34;numbers&#34;] = 1
+        itemdata[&#34;main-type&#34;] = &#34;numbers&#34;
+        itemdata[&#34;category&#34;] = &#34;script-identifiable&#34;
+    # Test for whether the length in characters is substantially reduced
+    # The definition of &#34;substantially&#34; is: at least 3 characters shorter.
+    elif len(item1) &gt; len(item2)+3:
+        itemdata[&#34;condensation&#34;] = 1
+        itemdata[&#34;main-type&#34;] = &#34;condensation&#34;
+        itemdata[&#34;category&#34;] = &#34;other&#34;
+    # Test for whether the length in characters is substantially expanded.
+    # The definition of &#34;substantially&#34; is: at least 3 characters longer.
+    elif len(item2) &gt; len(item1)+3:
+        itemdata[&#34;expansion&#34;] = 1
+        itemdata[&#34;main-type&#34;] = &#34;expansion&#34;
+        itemdata[&#34;category&#34;] = &#34;other&#34;
+    # If none of the above could be identified, mark it for human inspection.
+    else:
+        itemdata[&#34;tbc&#34;] = 1
+        itemdata[&#34;main-type&#34;] = &#34;tbc&#34;
+        itemdata[&#34;category&#34;] = &#34;other&#34;
+    # Information about the amount of condensation or expansion in characters
+    itemdata[&#34;lendiff-chars&#34;] = len(item2) - len(item1)
+    # Information about the amount of condensation or expansion in words
+    itemdata[&#34;lendiff-words&#34;] = len(re.split(r&#34;\W+&#34;, item2))\
+        - len(re.split(r&#34;\W+&#34;, item1))
+    # Information about the Levenshtein distance
+    itemdata[&#34;lev-dist&#34;] = ld.distance(item1, item2)
+    # print(itemdata[&#34;lev-dist&#34;])
+    # Classification of items by large or small Levenshtein distance
+    if itemdata[&#34;lev-dist&#34;] &gt; params[&#34;levenshtein_cutoff&#34;]:
+        itemdata[&#34;lev-dist-class&#34;] = &#34;major&#34;
+    else:
+        itemdata[&#34;lev-dist-class&#34;] = &#34;minor&#34;
+    return itemdata
+
+
+def analyse_diffs(difftext, params):
+    &#34;&#34;&#34;This function coordinates the analysis of the differences.
+    It iterates over each line, and over each difference in each line.
+    Returns a pandas DataFrame containing all analysis data.&#34;&#34;&#34;
+    # print(&#34;-- analyse_diffs&#34;)
+    allitemdata = []
+    line_number = 0
+    for line in difftext[:]:
+        line_number += 1
+        line = clean_line(line)
+        # print(&#34;\n&#34; + line)
+        pairs = create_pairs(line)
+        # for pair in pairs:
+        #     print(pair)
+        item_number = 0
+        for item in pairs:
+            item_number += 1
+            item1, item2 = prepare_item(item)
+            itemid = str(line_number)+&#34;-&#34;+str(item_number)
+            itemdata = define_itemdata(itemid, item1, item2)
+            itemdata = perform_itemanalysis(itemdata, item1, item2, params)
+            # print(itemdata)
+            allitemdata.append(itemdata)
+    columns = define_columnorder()
+    allitemdata = pd.DataFrame(allitemdata, columns=columns)
+    # print(allitemdata)
+    if allitemdata.shape[0] &gt; 1:
+        print(&#34;Looking good: &#34; + str(allitemdata.shape[0])
+              + &#34; differences have been analysed.&#34;)
+    else:
+        sys.exit(&#34;ERROR! No differences have been analysed. Stoppping.&#34;)
+    return allitemdata
+
+
+def save_summary(difftext, analysisdata, analysissummary_file):
+    &#34;&#34;&#34;Saves very basic summary data to file for futher use.&#34;&#34;&#34;
+    numlines = len(difftext)
+    numdifferences = analysisdata.shape[0]
+    analysissummary = {&#34;numlines&#34;: numlines, &#34;numdifferences&#34;: numdifferences}
+    analysissummary_df = pd.DataFrame(analysissummary, index=[&#34;values&#34;])
+    with open(analysissummary_file, &#34;w&#34;, encoding=&#34;utf8&#34;) as outfile:
+        analysissummary_df.to_csv(outfile, sep=&#34;\t&#34;)
+    return analysissummary
+
+
+def save_analysis(analysisresults, analysisfile):
+    &#34;&#34;&#34;Saves the detailed analysis results to a TSV file.&#34;&#34;&#34;
+    with open(analysisfile, &#34;w&#34;, encoding=&#34;utf8&#34;) as outfile:
+        analysisresults.to_csv(outfile, sep=&#34;\t&#34;, index=False)
+    print(&#34;The analysis results have been saved to &#34;
+          + basename(analysisfile) + &#34;.&#34;)
+
+
+# === Main ===
+
+def main(params):
+    print(&#34;\n== coleto: running text_analyze. ==&#34;)
+    difftext = get_difftext(params[&#34;wdiffed_file&#34;])
+    analysisresults = analyse_diffs(difftext, params)
+    analysissummary = save_summary(difftext, analysisresults,
+                                   params[&#34;analysissummary_file&#34;])
+    save_analysis(analysisresults, params[&#34;analysis_file&#34;])
+    return analysissummary</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="coleto.text_analyze.analyse_diffs"><code class="name flex">
+<span>def <span class="ident">analyse_diffs</span></span>(<span>difftext, params)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function coordinates the analysis of the differences.
+It iterates over each line, and over each difference in each line.
+Returns a pandas DataFrame containing all analysis data.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def analyse_diffs(difftext, params):
+    &#34;&#34;&#34;This function coordinates the analysis of the differences.
+    It iterates over each line, and over each difference in each line.
+    Returns a pandas DataFrame containing all analysis data.&#34;&#34;&#34;
+    # print(&#34;-- analyse_diffs&#34;)
+    allitemdata = []
+    line_number = 0
+    for line in difftext[:]:
+        line_number += 1
+        line = clean_line(line)
+        # print(&#34;\n&#34; + line)
+        pairs = create_pairs(line)
+        # for pair in pairs:
+        #     print(pair)
+        item_number = 0
+        for item in pairs:
+            item_number += 1
+            item1, item2 = prepare_item(item)
+            itemid = str(line_number)+&#34;-&#34;+str(item_number)
+            itemdata = define_itemdata(itemid, item1, item2)
+            itemdata = perform_itemanalysis(itemdata, item1, item2, params)
+            # print(itemdata)
+            allitemdata.append(itemdata)
+    columns = define_columnorder()
+    allitemdata = pd.DataFrame(allitemdata, columns=columns)
+    # print(allitemdata)
+    if allitemdata.shape[0] &gt; 1:
+        print(&#34;Looking good: &#34; + str(allitemdata.shape[0])
+              + &#34; differences have been analysed.&#34;)
+    else:
+        sys.exit(&#34;ERROR! No differences have been analysed. Stoppping.&#34;)
+    return allitemdata</code></pre>
+</details>
+</dd>
+<dt id="coleto.text_analyze.clean_line"><code class="name flex">
+<span>def <span class="ident">clean_line</span></span>(<span>line)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Cleans up the lines a little bit.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def clean_line(line):
+    &#34;&#34;&#34;Cleans up the lines a little bit.&#34;&#34;&#34;
+    line = re.sub(&#34;]{&#34;, &#34;] {&#34;, line)
+    line = re.sub(r&#34;(-\]) ([^{])&#34;, &#34;\\1 {++} \\2&#34;, line)
+    line = re.sub(r&#34;(\w) ({)&#34;, &#34;\\1 [--] \\2&#34;, line)
+    return line</code></pre>
+</details>
+</dd>
+<dt id="coleto.text_analyze.create_pairs"><code class="name flex">
+<span>def <span class="ident">create_pairs</span></span>(<span>line)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>For every line, identifies each difference
+Then, collects each pair of differences separately.
+Returns a list of string pairs (one difference each)</p>
+<h1 id="_1">==============================================================</h1>
+<h1 id="much-better-but-still-not-entirely-correct">====
+Much better, but still not entirely correct!
+====</h1>
+<h1 id="_2">==============================================================</h1></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_pairs(line):
+    &#34;&#34;&#34;
+    For every line, identifies each difference
+    Then, collects each pair of differences separately.
+    Returns a list of string pairs (one difference each)
+    #==============================================================#
+    #====    Much better, but still not entirely correct!      ====#
+    #==============================================================#
+    &#34;&#34;&#34;
+    pairs = []
+    somepairs = re.findall(r&#34;\[-.*?\-\] {\+.*?\+}&#34;, line, re.DOTALL)
+    pairs.extend(somepairs)
+    if len(pairs) == 0:
+        somepairs = re.findall(r&#34;\[-.*?\-\]&#34;, line, re.DOTALL)
+        somepairs = [item + &#34; {++}&#34; for item in somepairs]
+        pairs.extend(somepairs)
+    if len(pairs) == 0:
+        somepairs = re.findall(r&#34;{\+.*?\+}&#34;, line, re.DOTALL)
+        somepairs = [&#34;[--] &#34; + item for item in somepairs]
+        pairs.extend(somepairs)
+    return pairs</code></pre>
+</details>
+</dd>
+<dt id="coleto.text_analyze.define_columnorder"><code class="name flex">
+<span>def <span class="ident">define_columnorder</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Defines the order of the columns, purely for display.
+Returns a list.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def define_columnorder():
+    &#34;&#34;&#34;
+    Defines the order of the columns, purely for display.
+    Returns a list.
+    &#34;&#34;&#34;
+    columns = [&#34;itemid&#34;,
+               &#34;version1&#34;,
+               &#34;version2&#34;,
+               &#34;category&#34;,
+               &#34;main-type&#34;,
+               &#34;lev-dist&#34;,
+               &#34;lev-dist-class&#34;,
+               &#34;lendiff-chars&#34;,
+               &#34;lendiff-words&#34;,
+               &#34;insertion&#34;,
+               &#34;deletion&#34;,
+               &#34;capitalization&#34;,
+               &#34;whitespace&#34;,
+               &#34;italics&#34;,
+               &#34;punctuation&#34;,
+               &#34;hyphenation&#34;,
+               &#34;numbers&#34;,
+               &#34;condensation&#34;,
+               &#34;expansion&#34;,
+               &#34;tbc&#34;]
+    return columns</code></pre>
+</details>
+</dd>
+<dt id="coleto.text_analyze.define_itemdata"><code class="name flex">
+<span>def <span class="ident">define_itemdata</span></span>(<span>itemid, item1, item2)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Defines the various pieces of information to be collected for each pair.
+Returns a dictionary that already includes the pairs' text but not data.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def define_itemdata(itemid, item1, item2):
+    &#34;&#34;&#34;
+    Defines the various pieces of information to be collected for each pair.
+    Returns a dictionary that already includes the pairs&#39; text but not data.
+    &#34;&#34;&#34;
+    itemdata = {&#34;itemid&#34;: itemid,
+                &#34;version1&#34;: item1,
+                &#34;version2&#34;: item2,
+                &#34;lev-dist&#34;: &#34;NA&#34;,
+                &#34;lev-dist-class&#34;: &#34;NA&#34;,
+                &#34;lendiff-chars&#34;: &#34;NA&#34;,
+                &#34;lendiff-words&#34;: &#34;NA&#34;,
+                &#34;category&#34;: &#34;NA&#34;,
+                &#34;main-type&#34;: &#34;NA&#34;,
+                &#34;insertion&#34;: 0,
+                &#34;deletion&#34;: 0,
+                &#34;capitalization&#34;: 0,
+                &#34;whitespace&#34;: 0,
+                &#34;italics&#34;: 0,
+                &#34;punctuation&#34;: 0,
+                &#34;hyphenation&#34;: 0,
+                &#34;numbers&#34;: 0,
+                &#34;condensation&#34;: 0,
+                &#34;expansion&#34;: 0,
+                &#34;tbc&#34;: 0}
+    return itemdata</code></pre>
+</details>
+</dd>
+<dt id="coleto.text_analyze.get_difftext"><code class="name flex">
+<span>def <span class="ident">get_difftext</span></span>(<span>wdiffed_file)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Loads the file containing the collation results from Wdiff.
+Returns a list of lines with one or several differences.
+In our case, each line corresponds to one sentence.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_difftext(wdiffed_file):
+    &#34;&#34;&#34;Loads the file containing the collation results from Wdiff.
+    Returns a list of lines with one or several differences.
+    In our case, each line corresponds to one sentence.&#34;&#34;&#34;
+    # print(&#34;\n-- get_difftext&#34;)
+    with open(wdiffed_file, &#34;r&#34;) as infile:
+        difftext = infile.read()
+        # print(difftext)
+        difftext = re.split(&#34;\n&#34;, difftext)
+        if len(difftext) &gt; 4:
+            print(&#34;Looking good: there are &#34; + str(len(difftext)) + &#34; lines.&#34;)
+        elif len(difftext) &gt; 2:
+            print(&#34;Warning: are there really only &#34;
+                  + str(len(difftext)) + &#34; lines?&#34;)
+        else:
+            sys.exit(&#34;ERROR! There seem to be only very few lines (&#34;
+                     + str(len(difftext)) + &#34;) to analyze. Stopping.&#34;)
+        return difftext</code></pre>
+</details>
+</dd>
+<dt id="coleto.text_analyze.main"><code class="name flex">
+<span>def <span class="ident">main</span></span>(<span>params)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def main(params):
+    print(&#34;\n== coleto: running text_analyze. ==&#34;)
+    difftext = get_difftext(params[&#34;wdiffed_file&#34;])
+    analysisresults = analyse_diffs(difftext, params)
+    analysissummary = save_summary(difftext, analysisresults,
+                                   params[&#34;analysissummary_file&#34;])
+    save_analysis(analysisresults, params[&#34;analysis_file&#34;])
+    return analysissummary</code></pre>
+</details>
+</dd>
+<dt id="coleto.text_analyze.perform_itemanalysis"><code class="name flex">
+<span>def <span class="ident">perform_itemanalysis</span></span>(<span>itemdata, item1, item2, params)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function performs the actual analysis.
+The procedure is applied to each pair in each line.
+For the most part, a substitution test is done and if successful,
+the corresponding category is assigned.
+More than one category can be assigned to an item.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def perform_itemanalysis(itemdata, item1, item2, params):
+    &#34;&#34;&#34;
+    This function performs the actual analysis.
+    The procedure is applied to each pair in each line.
+    For the most part, a substitution test is done and if successful,
+    the corresponding category is assigned.
+    More than one category can be assigned to an item.
+    &#34;&#34;&#34;
+    # Test for insertion of new word(s)
+    if len(item1) == 0:
+        itemdata[&#34;insertion&#34;] = 1
+        itemdata[&#34;main-type&#34;] = &#34;insertion&#34;
+        itemdata[&#34;category&#34;] = &#34;other&#34;
+    # Test for complete deletion of word(s)
+    elif len(item2) == 0:
+        itemdata[&#34;deletion&#34;] = 1
+        itemdata[&#34;main-type&#34;] = &#34;deletion&#34;
+        itemdata[&#34;category&#34;] = &#34;other&#34;
+    # Test for difference in upper/lower case
+    elif item1.lower() == item2.lower():
+        itemdata[&#34;capitalization&#34;] = 1
+        itemdata[&#34;main-type&#34;] = &#34;capitalization&#34;
+        itemdata[&#34;category&#34;] = &#34;script-identifiable&#34;
+    # Test for difference in whitespace
+    elif re.sub(&#34; &#34;, &#34;&#34;, item1) == re.sub(&#34; &#34;, &#34;&#34;, item2):
+        itemdata[&#34;whitespace&#34;] = 1
+        itemdata[&#34;main-type&#34;] = &#34;whitespace&#34;
+        itemdata[&#34;category&#34;] = &#34;script-identifiable&#34;
+    # Test for difference in italics
+    elif re.sub(r&#34;[\*_]&#34;, &#34;&#34;, item1) == re.sub(r&#34;[\*_]&#34;, &#34;&#34;, item2):
+        itemdata[&#34;italics&#34;] = 1
+        itemdata[&#34;main-type&#34;] = &#34;italics&#34;
+        itemdata[&#34;category&#34;] = &#34;script-identifiable&#34;
+    # Test for difference in punctuation
+    elif re.sub(r&#34;[\&#34;,&#39;;:!?\.\(\)]&#34;, &#34;&#34;, item1) == \
+            re.sub(r&#34;[\&#34;,&#39;;:!?\.\(\)]&#34;, &#34;&#34;, item2):
+        itemdata[&#34;punctuation&#34;] = 1
+        itemdata[&#34;main-type&#34;] = &#34;punctuation&#34;
+        itemdata[&#34;category&#34;] = &#34;script-identifiable&#34;
+    # Test for difference in hyphenation
+    elif re.sub(r&#34;\-&#34;, &#34;&#34;, item1) == re.sub(&#34; &#34;, &#34;&#34;, item2):
+        itemdata[&#34;hyphenation&#34;] = 1
+        itemdata[&#34;main-type&#34;] = &#34;hyphenation&#34;
+        itemdata[&#34;category&#34;] = &#34;script-identifiable&#34;
+    # Test for difference in hyphenation
+    elif re.sub(&#34; &#34;, &#34;&#34;, item1) == re.sub(r&#34;\-&#34;, &#34;&#34;, item2):
+        itemdata[&#34;hyphenation&#34;] = 1
+        itemdata[&#34;main-type&#34;] = &#34;hyphenation&#34;
+        itemdata[&#34;category&#34;] = &#34;script-identifiable&#34;
+    # Test for difference involving (but not limited to) numbers
+    elif bool(re.search(r&#39;\d&#39;, item1+item2)) is True:
+        itemdata[&#34;numbers&#34;] = 1
+        itemdata[&#34;main-type&#34;] = &#34;numbers&#34;
+        itemdata[&#34;category&#34;] = &#34;script-identifiable&#34;
+    # Test for whether the length in characters is substantially reduced
+    # The definition of &#34;substantially&#34; is: at least 3 characters shorter.
+    elif len(item1) &gt; len(item2)+3:
+        itemdata[&#34;condensation&#34;] = 1
+        itemdata[&#34;main-type&#34;] = &#34;condensation&#34;
+        itemdata[&#34;category&#34;] = &#34;other&#34;
+    # Test for whether the length in characters is substantially expanded.
+    # The definition of &#34;substantially&#34; is: at least 3 characters longer.
+    elif len(item2) &gt; len(item1)+3:
+        itemdata[&#34;expansion&#34;] = 1
+        itemdata[&#34;main-type&#34;] = &#34;expansion&#34;
+        itemdata[&#34;category&#34;] = &#34;other&#34;
+    # If none of the above could be identified, mark it for human inspection.
+    else:
+        itemdata[&#34;tbc&#34;] = 1
+        itemdata[&#34;main-type&#34;] = &#34;tbc&#34;
+        itemdata[&#34;category&#34;] = &#34;other&#34;
+    # Information about the amount of condensation or expansion in characters
+    itemdata[&#34;lendiff-chars&#34;] = len(item2) - len(item1)
+    # Information about the amount of condensation or expansion in words
+    itemdata[&#34;lendiff-words&#34;] = len(re.split(r&#34;\W+&#34;, item2))\
+        - len(re.split(r&#34;\W+&#34;, item1))
+    # Information about the Levenshtein distance
+    itemdata[&#34;lev-dist&#34;] = ld.distance(item1, item2)
+    # print(itemdata[&#34;lev-dist&#34;])
+    # Classification of items by large or small Levenshtein distance
+    if itemdata[&#34;lev-dist&#34;] &gt; params[&#34;levenshtein_cutoff&#34;]:
+        itemdata[&#34;lev-dist-class&#34;] = &#34;major&#34;
+    else:
+        itemdata[&#34;lev-dist-class&#34;] = &#34;minor&#34;
+    return itemdata</code></pre>
+</details>
+</dd>
+<dt id="coleto.text_analyze.prepare_item"><code class="name flex">
+<span>def <span class="ident">prepare_item</span></span>(<span>item)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Prepares the items (each one pair from the list of pairs) to be compared.
+Returns the two items as separate strings.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def prepare_item(item):
+    &#34;&#34;&#34;
+    Prepares the items (each one pair from the list of pairs) to be compared.
+    Returns the two items as separate strings.
+    &#34;&#34;&#34;
+    item = re.split(r&#39;\] {&#39;, item)
+    item1 = item[0][2:-1]
+    item2 = item[1][1:-2]
+    return item1, item2</code></pre>
+</details>
+</dd>
+<dt id="coleto.text_analyze.save_analysis"><code class="name flex">
+<span>def <span class="ident">save_analysis</span></span>(<span>analysisresults, analysisfile)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Saves the detailed analysis results to a TSV file.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save_analysis(analysisresults, analysisfile):
+    &#34;&#34;&#34;Saves the detailed analysis results to a TSV file.&#34;&#34;&#34;
+    with open(analysisfile, &#34;w&#34;, encoding=&#34;utf8&#34;) as outfile:
+        analysisresults.to_csv(outfile, sep=&#34;\t&#34;, index=False)
+    print(&#34;The analysis results have been saved to &#34;
+          + basename(analysisfile) + &#34;.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="coleto.text_analyze.save_summary"><code class="name flex">
+<span>def <span class="ident">save_summary</span></span>(<span>difftext, analysisdata, analysissummary_file)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Saves very basic summary data to file for futher use.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save_summary(difftext, analysisdata, analysissummary_file):
+    &#34;&#34;&#34;Saves very basic summary data to file for futher use.&#34;&#34;&#34;
+    numlines = len(difftext)
+    numdifferences = analysisdata.shape[0]
+    analysissummary = {&#34;numlines&#34;: numlines, &#34;numdifferences&#34;: numdifferences}
+    analysissummary_df = pd.DataFrame(analysissummary, index=[&#34;values&#34;])
+    with open(analysissummary_file, &#34;w&#34;, encoding=&#34;utf8&#34;) as outfile:
+        analysissummary_df.to_csv(outfile, sep=&#34;\t&#34;)
+    return analysissummary</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="coleto" href="index.html">coleto</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="coleto.text_analyze.analyse_diffs" href="#coleto.text_analyze.analyse_diffs">analyse_diffs</a></code></li>
+<li><code><a title="coleto.text_analyze.clean_line" href="#coleto.text_analyze.clean_line">clean_line</a></code></li>
+<li><code><a title="coleto.text_analyze.create_pairs" href="#coleto.text_analyze.create_pairs">create_pairs</a></code></li>
+<li><code><a title="coleto.text_analyze.define_columnorder" href="#coleto.text_analyze.define_columnorder">define_columnorder</a></code></li>
+<li><code><a title="coleto.text_analyze.define_itemdata" href="#coleto.text_analyze.define_itemdata">define_itemdata</a></code></li>
+<li><code><a title="coleto.text_analyze.get_difftext" href="#coleto.text_analyze.get_difftext">get_difftext</a></code></li>
+<li><code><a title="coleto.text_analyze.main" href="#coleto.text_analyze.main">main</a></code></li>
+<li><code><a title="coleto.text_analyze.perform_itemanalysis" href="#coleto.text_analyze.perform_itemanalysis">perform_itemanalysis</a></code></li>
+<li><code><a title="coleto.text_analyze.prepare_item" href="#coleto.text_analyze.prepare_item">prepare_item</a></code></li>
+<li><code><a title="coleto.text_analyze.save_analysis" href="#coleto.text_analyze.save_analysis">save_analysis</a></code></li>
+<li><code><a title="coleto.text_analyze.save_summary" href="#coleto.text_analyze.save_summary">save_summary</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>
