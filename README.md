@@ -2,9 +2,6 @@
 
 This is a text comparison tool written in Python. 
 
-See also: https://github.com/dh-trier/coleto-data. 
-
-
 ## What is coleto? Purpose and features 
 
 Coleto is a text comparison, or collation, tool written in Python and using wdiff in the background. Its intended use is in the context of Computational Literary Studies, where texts may exist in more than one version and it is of interest to compare them. Coleto takes two similar but not identical versions of a text as input, identifies all passages with differences between the two versions, attempts to describe and classify each difference, and visualizes the results. 
