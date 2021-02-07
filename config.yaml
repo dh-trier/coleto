@@ -3,7 +3,7 @@
 # (Always maintain whitespace after ":"!)
 
 working_directory: ""
-dataset: Doyle
+dataset: Loaisel
 language: en
 smoothing: True
 levenshtein_cutoff: 5
