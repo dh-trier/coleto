@@ -32,7 +32,15 @@ The following Python packages need to be installed:
 
 ### Install Python requirements
 
-Using pip, install all Python packages listed above. 
+We recommend creating a Python virtual environment when using coleto. 
+
+Create a new virtual environment using the standard Python `venv` functionality, or using `conda` in Anaconda, or using `pipenv`.
+
+Inside your new virtual environment, you can install all requirements as follows: 
+
+```
+pip install -r requirements.txt
+```
 
 To download the NLTK punkt model, on the command line / terminal, enter: `python3`, then `import nltk`, then `nltk.download('punkt')`. 
 
