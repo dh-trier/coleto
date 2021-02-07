@@ -1,0 +1,12 @@
+itemid	version1	version2	category	main-type	lev-dist	lev-dist-class	lendiff-chars	lendiff-words	insertion	deletion	capitalization	whitespace	italics	punctuation	hyphenation	numbers	condensation	expansion	tbc
+2-1	dunkel	schwarz	other	tbc	7	major	1	0	0	0	0	0	0	0	0	0	0	0	1
+39-1	5	fünf	script-identifiable	numbers	4	minor	3	0	0	0	0	0	0	0	0	1	0	0	0
+39-2	7	sieben	script-identifiable	numbers	6	major	5	0	0	0	0	0	0	0	0	1	0	0	0
+50-1	folgen.		other	deletion	7	major	-7	-1	0	1	0	0	0	0	0	0	0	0	0
+51-1	Vielleicht	folgen; vielleicht	other	expansion	9	major	8	1	0	0	0	0	0	0	0	0	0	1	0
+56-1	Etwas	etwas	script-identifiable	capitalization	1	minor	0	0	0	0	1	0	0	0	0	0	0	0	0
+136-1	merkwürdig,	merkwürdiger,	other	tbc	2	minor	2	0	0	0	0	0	0	0	0	0	0	0	1
+238-1	sollte!	sollte.	script-identifiable	punctuation	1	minor	0	0	0	0	0	0	0	1	0	0	0	0	0
+241-1	hell	helle	other	tbc	1	minor	1	0	0	0	0	0	0	0	0	0	0	0	1
+286-1	*Schuß*	Schuß	script-identifiable	italics	2	minor	-2	-2	0	0	0	0	1	0	0	0	0	0	0
+294-1	Anti-pathie	Antipathie	script-identifiable	hyphenation	1	minor	-1	-1	0	0	0	0	0	0	1	0	0	0	0

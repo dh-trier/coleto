@@ -1,0 +1,28 @@
+itemid	version1	version2	category	main-type	lev-dist	lev-dist-class	lendiff-chars	lendiff-words	insertion	deletion	capitalization	whitespace	italics	punctuation	hyphenation	numbers	condensation	expansion	tbc
+1-1	pleasing	pleasant	other	tbc	2	minor	0	0	0	0	0	0	0	0	0	0	0	0	1
+1-2	Doctor	Dr.	other	tbc	5	minor	-3	1	0	0	0	0	0	0	0	0	0	0	1
+1-3	street	Street	script-identifiable	capitalization	1	minor	0	0	0	0	1	0	0	0	0	0	0	0	0
+1-4	starting point	starting-point	script-identifiable	hyphenation	1	minor	0	0	0	0	0	0	0	0	1	0	0	0	0
+2-1	around	round	other	tbc	1	minor	-1	0	0	0	0	0	0	0	0	0	0	0	1
+2-2	two	2	script-identifiable	numbers	3	minor	-2	0	0	0	0	0	0	0	0	1	0	0	0
+2-3	diagrams	maps	other	condensation	6	major	-4	0	0	0	0	0	0	0	0	0	1	0	0
+2-4	wall;	wall,	script-identifiable	punctuation	1	minor	0	0	0	0	0	0	0	1	0	0	0	0	0
+2-5		acid-charred	other	insertion	12	major	12	1	1	0	0	0	0	0	0	0	0	0	0
+2-6	chemicals charred by acid;	chemicals,	other	condensation	17	major	-16	-3	0	0	0	0	0	0	0	0	1	0	0
+2-7	corner;	corner,	script-identifiable	punctuation	1	minor	0	0	0	0	0	0	0	1	0	0	0	0	0
+2-8	tobacco	pipes	other	tbc	7	major	-2	0	0	0	0	0	0	0	0	0	0	0	1
+2-9	pipes.	tobacco.	other	tbc	7	major	2	0	0	0	0	0	0	0	0	0	0	0	1
+3-1	around	round	other	tbc	1	minor	-1	0	0	0	0	0	0	0	0	0	0	0	1
+3-2		fresh and	other	insertion	9	major	9	1	1	0	0	0	0	0	0	0	0	0	0
+3-3	Bolly,	Billy,	other	tbc	1	minor	0	0	0	0	0	0	0	0	0	0	0	0	1
+3-4	very-wise	very wise	script-identifiable	hyphenation	1	minor	0	0	0	0	0	0	0	0	1	0	0	0	0
+3-5	*tactful*	tactful	script-identifiable	italics	2	minor	-2	-2	0	0	0	0	1	0	0	0	0	0	0
+3-6	litlle	little	other	tbc	1	minor	0	0	0	0	0	0	0	0	0	0	0	0	1
+3-7	_isolation_	isolation	script-identifiable	italics	2	minor	-2	0	0	0	0	0	1	0	0	0	0	0	0
+3-8	sur rounded	surrounded	script-identifiable	whitespace	1	minor	-1	-1	0	0	0	1	0	0	0	0	0	0	0
+3-9	Saturnine face	saturnine figure	other	tbc	5	minor	2	0	0	0	0	0	0	0	0	0	0	0	1
+3-10	and inscrutable		other	deletion	15	major	-15	-1	0	1	0	0	0	0	0	0	0	0	0
+4-1	"""It"		other	deletion	3	minor	-3	-1	0	1	0	0	0	0	0	0	0	0	0
+5-1	Bolly.	Billy.	other	tbc	1	minor	0	0	0	0	0	0	0	0	0	0	0	0	1
+6-1	either!	either.	script-identifiable	punctuation	1	minor	0	0	0	0	0	0	0	1	0	0	0	0	0
+7-1	"him?"""	him?”	other	tbc	1	minor	0	0	0	0	0	0	0	0	0	0	0	0	1

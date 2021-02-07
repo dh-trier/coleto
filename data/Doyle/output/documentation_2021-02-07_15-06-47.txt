@@ -1,0 +1,27 @@
+## coleto documentation for run: 2021-02-07_15-06-47.
+
+- working_directory : 
+- dataset_directory : data/Doyle
+- input_directory : data/Doyle/input/
+- output_directory : data/Doyle/output/
+- input_file1 : data/Doyle/input/Doyle-Mazarin_v2.txt
+- input_file2 : data/Doyle/input/Doyle-Mazarin_v1.txt
+- sentences_file1 : data/Doyle/output/Doyle-Mazarin_v2_split.txt
+- sentences_file2 : data/Doyle/output/Doyle-Mazarin_v1_split.txt
+- wdiffed_file : data/Doyle/output/wdiffed.txt
+- analysis_file : data/Doyle/output/diff-analysis.tsv
+- analysissummary_file : data/Doyle/output/diff-summary.tsv
+- levdists_file : data/Doyle/output/diff-levenshtein-data.tsv
+- progressionplot : data/Doyle/output/edits-over-textual-progression.svg
+- simplestatistics_file : data/Doyle/output/diff-simple-statistics.tsv
+- complexstatistics_file : data/Doyle/output/diff-complex-statistics.tsv
+- simpletypesplot : data/Doyle/output/simple-types-plot.svg
+- complextypesplot : data/Doyle/output/complex-types-plot.svg
+- documentation_name : data/Doyle/output/documentation
+- smoothing : True
+- language : en
+- ld_cutoff : 5
+- documentation_mode : minimal
+- timestamp : 2021-02-07_15-06-47
+- numlines : 7
+- numdifferences : 27
