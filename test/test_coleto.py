@@ -70,7 +70,8 @@ def test_text_analyze_itemanalysis_1():
                 "condensation": 0,
                 "expansion": 0,
                 "tbc": 0}
-    itemdata = text_analyze.perform_itemanalysis(itemdata, item1, item2)
+    params = {"levenshtein_cutoff": 5}
+    itemdata = text_analyze.perform_itemanalysis(itemdata, item1, item2, params)
     print(itemdata)
     assert itemdata["version1"] == "dark"\
         and itemdata["version2"] == "dark night"\
@@ -112,7 +113,8 @@ def test_text_analyze_itemanalysis_2():
                 "condensation": 0,
                 "expansion": 0,
                 "tbc": 0}
-    itemdata = text_analyze.perform_itemanalysis(itemdata, item1, item2)
+    params = {"levenshtein_cutoff": 5}
+    itemdata = text_analyze.perform_itemanalysis(itemdata, item1, item2, params)
     print(itemdata)
     assert itemdata["version1"] == "mark-up"\
         and itemdata["version2"] == "markup"\
@@ -159,7 +161,8 @@ def test_text_analyze_itemanalysis_3():
                 "condensation": 0,
                 "expansion": 0,
                 "tbc": 0}
-    itemdata = text_analyze.perform_itemanalysis(itemdata, item1, item2)
+    params = {"levenshtein_cutoff": 5}
+    itemdata = text_analyze.perform_itemanalysis(itemdata, item1, item2, params)
     print(itemdata)
     assert itemdata["version1"] == "fracking!"\
         and itemdata["version2"] == "fracking"\
@@ -207,7 +210,8 @@ def test_text_analyze_itemanalysis_4():
                 "condensation": 0,
                 "expansion": 0,
                 "tbc": 0}
-    itemdata = text_analyze.perform_itemanalysis(itemdata, item1, item2)
+    params = {"levenshtein_cutoff": 5}
+    itemdata = text_analyze.perform_itemanalysis(itemdata, item1, item2, params)
     print(itemdata)
     assert itemdata["version1"] == "wonderful"\
         and itemdata["version2"] == "awesome"\
