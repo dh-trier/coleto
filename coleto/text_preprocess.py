@@ -69,6 +69,9 @@ def save_sentences(sentences, filename):
 # === Main function ===
 
 def main(params):
+    """Splits a plain text file with newlines for paragraph endings
+    into a sequence of sentences, one sentence per line.
+    This is the first step in the alignement process."""
     print("\n== coleto: running text_preprocess. ==")
     text1 = read_text(params["input_file1"])
     sentences1, num_sentences1 = sentence_splitter(params["input_file1"], text1)

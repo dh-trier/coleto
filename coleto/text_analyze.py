@@ -54,11 +54,8 @@ def create_pairs(line):
     """
     For every line, identifies each difference
     Then, collects each pair of differences separately.
-    Returns a list of string pairs (one difference each)
-    #==============================================================#
-    #====    Much better, but still not entirely correct!      ====#
-    #==============================================================#
-    """
+    Returns a list of string pairs (one difference each)"""
+    # FIXIT: Better, but still not perfect
     pairs = []
     somepairs = re.findall(r"\[-.*?\-\] {\+.*?\+}", line, re.DOTALL)
     pairs.extend(somepairs)
@@ -283,6 +280,9 @@ def save_analysis(analysisresults, analysisfile):
 # === Main ===
 
 def main(params):
+    """Loads the file containing the collation results from Wdiff.
+    Then, identifies various kinds of differences that can be observed.
+    Assembles this information for each difference between the two texts."""
     print("\n== coleto: running text_analyze. ==")
     difftext = get_difftext(params["wdiffed_file"])
     analysisresults = analyse_diffs(difftext, params)

@@ -20,6 +20,7 @@ import sys
 
 
 def load_statistics(statistics_file):
+    """Loads the statistics TSV file."""
     with open(statistics_file, "r", encoding="utf8") as infile:
         statistics = pd.read_csv(infile, sep="\t", index_col=0)
         # print(statistics)
@@ -34,6 +35,7 @@ def load_statistics(statistics_file):
 
 
 def define_config():
+    """Defines some configuration options for the pygal plot."""
     config = Config()
     config.show_legend = False
     config.legend_at_bottom = True
@@ -46,6 +48,7 @@ def define_config():
 
 
 def define_style():
+    """Defines the pygal plot styling."""
     mystyle = Style(
         background="transparent",
         plot_background="transparent",
@@ -64,12 +67,14 @@ def define_style():
 
 
 def prepare_simple_data(statistics, selection):
+    """Prepares data for visualization."""
     data = statistics.loc[selection, :]
     # print(data)
     return data
 
 
 def make_barchart1(data, typesplot):
+    """Creates a pygal barchart with the type frequency data."""
     config = define_config()
     mystyle = define_style()
     labels = list(data.index)
@@ -93,6 +98,7 @@ def make_barchart1(data, typesplot):
 
 
 def load_pivotdata(pivotstatistics_file): 
+    """Loads the transformed statistics data."""
     with open(pivotstatistics_file, "r", encoding="utf8") as infile: 
         complexdata = pd.read_csv(infile, sep="\t", index_col=0)
         #print(complexdata.head())
@@ -104,6 +110,8 @@ def load_pivotdata(pivotstatistics_file):
 
 
 def prepare_complex_data(complexdata):
+    """Prepares the more complex, transformed statistics data
+    for visualization. Fills in blanks if necessary."""
     # print(complexdata)
     data = {}
     try:
@@ -140,6 +148,7 @@ def prepare_complex_data(complexdata):
 
 
 def make_barchart2(data, typesplot):
+    """Creates a barchart for the complex analysis categories."""
     config = define_config()
     mystyle = define_style()
     labels = list(data.index)
@@ -161,6 +170,8 @@ def make_barchart2(data, typesplot):
 
 
 def main(params):
+    """Creates several barchars showing the frequencies
+    of various kinds of edits in the data."""
     print("\n== coleto: running viz_distribution. ==")
     statistics = load_statistics(params["simplestatistics_file"])
     selection1 = [

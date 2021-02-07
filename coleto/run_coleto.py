@@ -26,6 +26,7 @@ import meta_documentation
 
 
 def main():
+    """Defines the coleto pipeline."""
     params = meta_parameters.main()
     text_preprocess.main(params)
     text_wdiff.main(params)

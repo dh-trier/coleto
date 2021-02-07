@@ -37,6 +37,7 @@ def load_data(levdists_file):
 
 
 def define_config():
+    """Defines some configuration settings for the pygal plot."""
     config = Config()
     config.show_legend = False
     config.human_readable = True
@@ -54,6 +55,7 @@ def define_config():
 
 
 def define_style():
+    """Defines a styling for the pygal plot."""
     mystyle = Style(
         background="transparent",
         plot_background="transparent",
@@ -78,7 +80,11 @@ def apply_smoothing(data, smoothing):
        smoothed = data  # with this, no smoothing is applied.
     return smoothed
 
+
 def main(params):
+    """Creates the visualization of the amount of change,
+    calculated in Levenshtein distances per sentence,
+    over the course of the textual progression."""
     print("\n== coleto: running viz_progression. ==")
     data = load_data(params["levdists_file"])
     lines = list(data.loc[:, "line"])
@@ -95,7 +101,3 @@ def main(params):
     plot.add("Other Edits", other)
     plot.render_to_file(params["progressionplot"])
     print("Looking good: The progression visualization has been saved.")
-
-
-# === Coordinating function ===
-

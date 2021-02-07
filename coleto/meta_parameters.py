@@ -22,6 +22,7 @@ import yaml
 # === Functions ===
 
 def load_user_parameters():
+    """Loads user-defined parameters from the config.yaml file."""
     with open(join("config.yaml"),
               "r", encoding="utf8") as infile:
         user_params = yaml.safe_load(infile)
@@ -35,9 +36,7 @@ def load_user_parameters():
 def get_parameters(user_params):
     """User-defined parameters are added to main parameters.
     Further parameters are generated based on them.
-    All parameters are made available to the other modules.
-    """
-
+    All parameters are made available to the other modules."""
     # Generated arameters: input files, sentence-split files.
     dataset_directory = join(user_params["working_directory"],
                              "data", user_params["dataset"])
@@ -99,6 +98,7 @@ def get_parameters(user_params):
 
 
 def main():
+    """Loads and generates parameters for the current analysis."""
     print("\n== coleto: running parameters. ==")
     user_params = load_user_parameters()
     params = get_parameters(user_params)

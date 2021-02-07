@@ -35,6 +35,7 @@ def read_datafile(tsvfile):
 
 
 def lev_stats(levdata, statistics):
+    """Collects some basic summary data on Levenshtein distances."""
     levdata.drop("Unnamed: 0", axis=1, inplace=True)
     statistics["lev_allscript"] = np.sum(levdata["script"])
     statistics["lev_allother"] = np.sum(levdata["other"])
@@ -42,6 +43,7 @@ def lev_stats(levdata, statistics):
 
 
 def ana_stats(anadata, statistics):
+    """Collects soms statistics from the analysis data."""
     # print(anadata.columns)
     items = ["condensation",
              "expansion",
@@ -100,6 +102,8 @@ def save_pivotdata(anadata, pivotstatisticsfile):
 
 
 def main(params):
+    """Creates the statistical data required for the\
+    visualization of types of changes overall."""
     print("\n== coleto: running stats_distribution. ==")
     statistics = {}
     levdata = read_datafile(params["levdists_file"])

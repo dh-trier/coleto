@@ -50,6 +50,8 @@ def check_results(wdiffed_file):
 # === Main ===
 
 def main(params):
+    """Uses subprocess to call wdiff from the command line.
+    You need to have wdiff installed."""
     print("\n== coleto: running text_wdiff. ==")
     call_wdiff(
         params["sentences_file1"],

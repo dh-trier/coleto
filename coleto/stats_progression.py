@@ -68,6 +68,10 @@ def separate_categories(data):
 
 
 def get_numsentences(analysissummaryfile):
+    """
+    Retrieves the number of sentences.
+    Used primarily in the documentation file so far.
+    """
     with open(analysissummaryfile, "r", encoding="utf8") as infile: 
         summary = pd.read_csv(infile, sep="\t", index_col=0)
         numsentences = summary["numlines"].values[0]
@@ -129,7 +133,9 @@ def save_data(data, filename):
 
 
 def main(params):
-    """Coordinates the process of preparing the data for visualization."""
+    """Calculates edit intensity over textual progression.
+    Focuses on cumulated Levenshtein distances. 
+    Reports them per category of edit and per sentence."""
     print("\n== coleto: running stats_progression.")
     data = read_datafile(params["analysis_file"])
     data = split_itemid(data)
