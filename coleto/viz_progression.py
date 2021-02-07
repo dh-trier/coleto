@@ -5,6 +5,10 @@
 """
 Visualize edit intensity over textual progression.
 Relies on cumulated Levenshtein distances per sentence.
+Uses the pygal library to create a barchart. 
+Uses scipy for some smoothing. 
+Input: The distribution statistics. 
+Ouptut: Saves an SVG file to disk. 
 
 Part of coleto, see: https://github.com/dh-trier/coleto.
 """

@@ -5,6 +5,10 @@
 """
 Uses subprocess to call wdiff from the command line.
 You need to have wdiff installed.
+Based on the input texts split into sentences,
+wdiff first aligns the text, identifying insertions and deletions. 
+It then identifies each location of difference between two aligned sentences.
+A sanity check is included to make sure wdiff has run correctly.
 """
 
 

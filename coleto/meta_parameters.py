@@ -3,7 +3,11 @@
 # Author: Christof Schöch, 2016-2021.
 
 
-"""Script to define and generate parameters, such as paths and filenames.
+"""
+Script to collect and generate parameters, such as paths and filenames.
+The user-defined parameters from the config.yaml file are included here. 
+Additional parameters are generated based on them. 
+All parameters are packaged-up in the 'params' variable. 
 The parameters are then used by the various coleto modules.
 
 Part of coleto, see: https://github.com/dh-trier/coleto.

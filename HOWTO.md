@@ -6,6 +6,8 @@ This document explains the installation requirements, installation procedure and
 
 See also the general information on coleto in the [README](https://github.com/dh-trier/coleto/blob/main/README.md). 
 
+For a detailed documentation of all functions, please open the [API reference](/docs/index.html) in your browser. 
+
 ## Requirements
 
 Python 3. This package has been tested with Python 3.7. It should also work with Python 3.6+

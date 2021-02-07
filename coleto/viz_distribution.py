@@ -4,6 +4,8 @@
 
 """
 Script to visualize some basic collation statistics.
+The key information visualized is frequency of edit types.
+Uses the pygal library to create several barcharts in SVG.
 
 Part of coleto, see: https://github.com/dh-trier/coleto.
 """

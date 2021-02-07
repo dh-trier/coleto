@@ -4,7 +4,8 @@
 
 """
 Script to create some statistics from the diff analysis data.
-These statistics focus on the edit types. 
+These statistics focus on the frequency of the various edit types. 
+Based on these statistics, several barcharts can be generated.
 
 Part of coleto, see: https://github.com/dh-trier/coleto.
 """

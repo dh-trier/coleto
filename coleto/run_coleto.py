@@ -4,8 +4,10 @@
 
 
 """
-Script that runs the coleto text collation pipeline.
-Please see the readme.md file and the documentation.
+This is the main script that controls the coleto text collation pipeline.
+
+For more information, please see the README.md and HOTWO.md files.
+An API reference can be found in the docs folder.
 """
 
 

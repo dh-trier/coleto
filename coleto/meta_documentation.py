@@ -3,7 +3,9 @@
 # Author: Christof Schöch, 2016-2019.
 
 """
-Script to save settings and parameters to disk for documentation.
+Script to save settings and parameters to disk for documentation. 
+Each time coleto is run, a timestamped file is created with this information.
+The purpose is to document, for any results, the parameters used. 
 
 Part of coleto, see: https://github.com/dh-trier/coleto.
 """
