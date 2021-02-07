@@ -8,16 +8,20 @@ See also the general information on coleto in the [README](https://github.com/dh
 
 ## Requirements
 
+Python 3. This package has been tested with Python 3.7. It should also work with Python 3.6+
+
 ### Python 
 
-Python 3. This package has been tested with Python 3.8. It should also work with Python 3.6+
+The following Python packages need to be installed: 
 
-Python packages
-
-* Levenshtein: https://pypi.org/project/python-Levenshtein/; install through pip
-* pygal: http://www.pygal.org/en/stable/installing.html; install through pip
-* NLTK: http://www.nltk.org/; install through pip
-* NLTK punkt model: 
+* pandas: https://pandas.pydata.org/; recommended version: 1.2.1+
+* numpy: https://numpy.org/; recommended version: 1.20.0+
+* scipy (for the Savgol smoothing): https://www.scipy.org/; recommended version: 1.6.0+
+* Levenshtein: https://pypi.org/project/python-Levenshtein/; recommended version: 0.12.2+ 
+* pygal (for the visualizations): http://www.pygal.org/en/stable/installing.html; recommended version: 2.4+
+* pyyaml (to handle the parameter file): https://pypi.org/project/PyYAML/; recommended version: 5.4.1+
+* NLTK (for sentence splitting): http://www.nltk.org/, recommended version: 3.5+. 
+* NLTK punkt model (for sentence splitting): https://www.nltk.org/_modules/nltk/tokenize/punkt.html
 
 ### Non-Python 
 
