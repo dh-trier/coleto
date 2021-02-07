@@ -63,15 +63,33 @@ If you cloned the repositories, just make sure you clone both to the same direct
 
 Generally speaking, there are four steps to running coleto. 
 
-(1) Place your input data in the right folder. If you're using sample data provided in `coleto/data`, you are all set. If you're ready to analyze your own data, create a new directory on the same level as the sample data directories, create an directory called `input` in there and place the two texts you would like to compare in the `input`directory. 
+1. Place input data in the right folder
+2. Adjust the configuration file
+3. Run the coleto pipeline
+4. Inspect the results
 
-(2) Adjust the parameters in the `config.yaml` file found in the top-level or main `coleto` directory. 
+### Input files
 
-(3) Run coleto, either from the command line or from an IDE. 
+Place your input data in the right folder. If you're using sample data provided in `coleto/data`, you are all set. If you're ready to analyze your own data, create a new directory on the same level as the sample data directories, create an directory called `input` in there and place the two texts you would like to compare in the `input`directory. 
 
-(4) Inspect the results, which are all written to the `output` directory inside the corresponding data directory. 
+### Adjust the config file
 
-### Running coleto from the command line
+Adjust the parameters in the `config.yaml` file found in the top-level or main `coleto` directory. Remember to maintain the whitespace character after the colon when modifying the values.
+
+This is what each parameter means: 
+
+- `working_directory`: This specifies where on your system the main coleto directory (the copy of the repository) is located in. Default: "". 
+- `dataset`: The directory name of the dataset folder inside the `data` directory, and containing the `input` and `output`folders for this dataset. Default: "Doyle". 
+- `language`: The language of the text files to be compared. Default: en (English). 
+- `smoothing`: Whether or not the visualization of the amount of changes over text time uses smoothing or not. Recommended to be `True`for longer texts, `False` for short texts. Default: `True`. 
+- `levenshtein_cutoff`: The cutoff value for the categorization of edits as major or minor, in terms of their Levenshtein distance. Any edit with a value larger than this will be categorized as major, any other edit will be categorized as minor. Default: `5`.
+- `documentation_mode`: Whether the script should save a minimal documentation of each run (just one timestamped file with some metadat) or a complete documentation (all data files, scripts and the config file). Default: minimal. (The `complete` mode is not implemented yet.)
+
+### Run coleto
+
+Run coleto, either from the command line or from an IDE. 
+
+#### Running coleto from the command line
 
 Run the run_coleto.py script, which is in the `coleto/coleto/` directory. 
 
@@ -79,9 +97,14 @@ On Mac and Linux, use  the `cd` command to navigate to the main `coleto?` folder
 
 Watch our for the programm messages on the progress with processing the files. There should not be any warnings or errors. If everything works fine, coleto will create the output files in the directory `data/{dataset}/output`. 
 
-### Running coleto from an IDE
+#### Running coleto from an IDE
 
 Use your IDE to open the file `run_coleto.py`, then press `F5` to execute the pipeline. 
+
+### Inspect the results
+
+Inspect the results, which are all written to the `output` directory inside the corresponding data directory. 
+
 
 ## What coleto does
 

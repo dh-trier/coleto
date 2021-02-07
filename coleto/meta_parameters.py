@@ -91,7 +91,8 @@ def get_parameters(user_params):
         "documentation_name": join(output_directory, "documentation"),
         "smoothing": user_params["smoothing"],
         "language": user_params["language"],
-        "ld_cutoff": user_params["ld_cutoff"]
+        "levensthein_cutoff": user_params["levenshtein_cutoff"],
+        "documentation_mode": user_params["documentation_mode"]
          }
 
     return params

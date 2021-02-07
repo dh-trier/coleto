@@ -59,5 +59,6 @@ def save_documentation(documentation):
 
 def main(params, analysissummary):
     print("\n== coleto: running meta_documentation. ==")
-    documentation = collect_documentation(params, analysissummary)
-    save_documentation(documentation)
+    if params["documentation_mode"] == "minimal":
+        documentation = collect_documentation(params, analysissummary)
+        save_documentation(documentation)

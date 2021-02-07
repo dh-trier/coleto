@@ -140,7 +140,7 @@ def define_columnorder():
     return columns
 
 
-def perform_itemanalysis(itemdata, item1, item2):
+def perform_itemanalysis(itemdata, item1, item2, params):
     """
     This function performs the actual analysis.
     The procedure is applied to each pair in each line.
@@ -220,14 +220,14 @@ def perform_itemanalysis(itemdata, item1, item2):
     itemdata["lev-dist"] = ld.distance(item1, item2)
     # print(itemdata["lev-dist"])
     # Classification of items by large or small Levenshtein distance
-    if itemdata["lev-dist"] > 5:
+    if itemdata["lev-dist"] > params["levenshtein_cutoff"]:
         itemdata["lev-dist-class"] = "major"
     else:
         itemdata["lev-dist-class"] = "minor"
     return itemdata
 
 
-def analyse_diffs(difftext):
+def analyse_diffs(difftext, params):
     """This function coordinates the analysis of the differences.
     It iterates over each line, and over each difference in each line.
     Returns a pandas DataFrame containing all analysis data."""
@@ -247,7 +247,7 @@ def analyse_diffs(difftext):
             item1, item2 = prepare_item(item)
             itemid = str(line_number)+"-"+str(item_number)
             itemdata = define_itemdata(itemid, item1, item2)
-            itemdata = perform_itemanalysis(itemdata, item1, item2)
+            itemdata = perform_itemanalysis(itemdata, item1, item2, params)
             # print(itemdata)
             allitemdata.append(itemdata)
     columns = define_columnorder()
@@ -285,7 +285,7 @@ def save_analysis(analysisresults, analysisfile):
 def main(params):
     print("\n== coleto: running text_analyze. ==")
     difftext = get_difftext(params["wdiffed_file"])
-    analysisresults = analyse_diffs(difftext)
+    analysisresults = analyse_diffs(difftext, params)
     analysissummary = save_summary(difftext, analysisresults,
                                    params["analysissummary_file"])
     save_analysis(analysisresults, params["analysis_file"])

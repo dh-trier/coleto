@@ -6,4 +6,5 @@ working_directory: ""
 dataset: Doyle
 language: en
 smoothing: True
-ld_cutoff: 5
+levenshtein_cutoff: 5
+documentation_mode: minimal
