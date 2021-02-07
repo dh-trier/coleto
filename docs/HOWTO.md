@@ -48,11 +48,7 @@ For wdiff:
 
 TBD.
 
-### (A) Install as a package
-
-(Coming soon to pypi.)
-
-### Alternatively, install directly via the repos
+### Install directly via the repos
 
 Download as a ZIP archive, or clone using Git, the following two repositories: two folders and place them both in one directory:
 
@@ -67,35 +63,32 @@ If you cloned the repositories, just make sure you clone both to the same direct
 
 Generally speaking, there are four steps to running coleto. 
 
-(1) Place your input data in the right folder. If you're using sample data provided in `coleto-data`, you are all set. If you're ready to analyze your own data, create a new directory on the same level as the sample data directories, create an directory called `input` in there and place the two texts you would like to compare in the `input`directory. 
+(1) Place your input data in the right folder. If you're using sample data provided in `coleto/data`, you are all set. If you're ready to analyze your own data, create a new directory on the same level as the sample data directories, create an directory called `input` in there and place the two texts you would like to compare in the `input`directory. 
 
-(2) Adjust the parameters in the `parameters.py` file found in `coleto/coleto_pkg`. 
+(2) Adjust the parameters in the `config.yaml` file found in the top-level or main `coleto` directory. 
 
 (3) Run coleto, either from the command line or from an IDE. 
 
 (4) Inspect the results, which are all written to the `output` directory inside the corresponding data directory. 
 
-### From the command line
+### Running coleto from the command line
 
-Run the run_coleto.py script, which is in the coleto_main directory
+Run the run_coleto.py script, which is in the `coleto/coleto/` directory. 
 
-On Mac, use  the cd command to navigate to the folder in Terminal, then 
+On Mac and Linux, use  the `cd` command to navigate to the main `coleto?` folder in Terminal, then run: `python3 coleto/run_coleto.py`  
 
-python3 run_coleto.py  
+Watch our for the programm messages on the progress with processing the files. There should not be any warnings or errors. If everything works fine, coleto will create the output files in the directory `data/{dataset}/output`. 
 
-If everything works, this will create the output files in coleto-data-main/Doyle/output
+### Running coleto from an IDE
 
-### From an IDE
+Use your IDE to open the file `run_coleto.py`, then press `F5` to execute the pipeline. 
 
-Open `parameters.py` to adjust the parameters. 
-
-Open `run_coleto.py` to execute the pipeline. 
-
-## What coleto actually does
+## What coleto does
 
 ### The pipeline
 
-1. `parameters.py`: This is where the user sets some parameters and additional parameters are generated and packaged up in the `params` variable, a `dict` containing all programme parameters, in particular directories, paths and settings. 
+1. `config.yaml`: This is where the user sets some configurations. 
+1. `meta_parameters.py`: This is parameters are generated and packaged up in the `params` variable, a `dict` containing all programme parameters, in particular directories, paths and settings. 
 1. `text_preprocess`: This step essentially performs sentence splitting, as well as some gentle cleaning-up, on the input texts. 
 1. `text_wdiff`: In this step, wdiff is called to perform the actuall collation of the texts. 
 1. `text_analyze`: This this step, the wdiff output is analyzed and the results are saved to a TSV file. This is the main contribution of coleto (see details below). 

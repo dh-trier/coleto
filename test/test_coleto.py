@@ -16,8 +16,8 @@ Part of coleto, see: https://github.com/dh-trier/coleto.
 
 import pytest
 from os.path import join
-from coleto_pkg import text_preprocess
-from coleto_pkg import text_analyze
+from coleto import text_preprocess
+from coleto import text_analyze
 
 
 # === Test functions ===
