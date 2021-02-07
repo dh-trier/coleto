@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='coleto',
-    version='0.1.0',
+    version='0.1.0dev',
     date="2021-02-07",
     author="Christof Schöch"
     author_email="c.schoech@gmail.com"
