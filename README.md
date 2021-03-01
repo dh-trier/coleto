@@ -14,9 +14,11 @@ Information on requirements, installation, and usage can be found in the [how-to
 
 Please be advised that coleto is research software, not a polished product for casual end-users. It does not have a graphical user interface. But it does work! 
 
-The coleto code as it currently stands is approaching v0.1.0, which will be our first official release. 
-
 Next steps on our development roadmap: See the issues and milestones in the [repository's issue tracker](https://github.com/dh-trier/coleto/issues). 
+
+### Version history 
+
+* v0.1.0 (codename "Martian release"). Our first official release. DOI: [10.5281/zenodo.4569328](https://doi.org/10.5281/zenodo.4569328). 
 
 ## Context 
 
