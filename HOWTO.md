@@ -1,10 +1,10 @@
-# HOW-TO for coleto
+# HOW-TO for Coleto
 
 Coleto is a text comparison, or collation, tool written in Python and using wdiff in the background. 
 
-This document explains the installation requirements, installation procedure and general usage of coleto. In addition, it describes the processing steps involved in coleto. 
+This document explains the installation requirements, installation procedure and general usage of Coleto. In addition, it describes the processing steps involved in Coleto. 
 
-See also the general information on coleto in the [README](https://github.com/dh-trier/coleto/blob/main/README.md). 
+See also the general information on Coleto in the [README](https://github.com/dh-trier/coleto/blob/main/README.md). 
 
 For a detailed documentation of all functions, please open the [API reference](/docs/index.html) in your browser. 
 
@@ -84,7 +84,7 @@ Generally speaking, there are four steps to running coleto.
 
 ### Input files
 
-Place your input data in the right folder. If you're using sample data provided in `coleto/data`, you are all set. If you're ready to analyze your own data, create a new directory on the same level as the sample data directories, create an directory called `input` in there and place the two texts you would like to compare in the `input`directory. 
+Place your input data in the right folder. If you're using sample data provided in `coleto/data`, you are all set. If you're ready to analyze your own data, create a new directory on the same level as the sample data directories ('Doyle' and 'Loaisel'), and place a new directory within your new directory called `input`. Then place the two .txt files you would like to compare inside the 'input' directory.
 
 ### Adjust the config file
 
@@ -92,26 +92,26 @@ Adjust the parameters in the `config.yaml` file found in the top-level or main `
 
 This is what each parameter means: 
 
-- `working_directory`: This specifies where on your system the main coleto directory (the copy of the repository) is located in. Default: "". 
+- `working_directory`: This specifies where on your system the main coleto directory (the copy of the repository) is located in. Default: "". (You probably don't have to change this, as you will later find and run the coleto.py script in your terminal)._
 - `dataset`: The directory name of the dataset folder inside the `data` directory, and containing the `input` and `output`folders for this dataset. Default: "Doyle". 
 - `language`: The language of the text files to be compared. Default: en (English). 
 - `smoothing`: Whether or not the visualization of the amount of changes over text time uses smoothing or not. Recommended to be `True`for longer texts, `False` for short texts. Default: `True`. 
 - `levenshtein_cutoff`: The cutoff value for the categorization of edits as major or minor, in terms of their Levenshtein distance. Any edit with a value larger than this will be categorized as major, any other edit will be categorized as minor. Default: `5`.
 - `documentation_mode`: Whether the script should save a minimal documentation of each run (just one timestamped file with some metadat) or a complete documentation (all data files, scripts and the config file). Default: minimal. (The `complete` mode is not implemented yet.)
 
-### Run coleto
+### Run Coleto
 
-Run coleto, either from the command line or from an IDE. 
+Run Coleto, either from the command line or from an IDE. 
 
-#### Running coleto from the command line
+#### Running Coleto from the command line
 
 Run the run_coleto.py script, which is in the `coleto/coleto/` directory. 
 
-On Mac and Linux, use  the `cd` command to navigate to the main `coleto?` folder in Terminal, then run: `python3 coleto/run_coleto.py`  
+On Mac and Linux, use  the `cd` command to navigate to the main `coleto` folder in Terminal, then run: `python3 coleto/run_coleto.py`  
 
 Watch our for the programm messages on the progress with processing the files. There should not be any warnings or errors. If everything works fine, coleto will create the output files in the directory `data/{dataset}/output`. 
 
-#### Running coleto from an IDE
+#### Running Coleto from an IDE
 
 Use your IDE to open the file `run_coleto.py`, then press `F5` to execute the pipeline. 
 
@@ -120,7 +120,7 @@ Use your IDE to open the file `run_coleto.py`, then press `F5` to execute the pi
 Inspect the results, which are all written to the `output` directory inside the corresponding data directory. 
 
 
-## What coleto does
+## What Coleto does
 
 ### The pipeline
 
