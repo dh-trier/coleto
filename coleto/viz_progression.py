@@ -67,7 +67,9 @@ def define_style():
         label_font_size=30,
         major_label_font_size=30,
         value_font_size=40,
-        title_font_size=35
+        title_font_size=35,
+        legend_font_family="googlefont:Alegreya",
+        legend_font_size=35
         
         )
     return mystyle
@@ -98,10 +100,10 @@ def main(params):
     other = apply_smoothing(data["other"], params["smoothing"])
     config = define_config()
     mystyle = define_style()
-    plot = pygal.StackedBar(config, style=mystyle)  # 60
-    plot.title = "Edit intensity across the text"
+    plot = pygal.StackedBar(config, style=mystyle, show_legend=True, legend_at_bottom=True, legend_at_bottom_columns=2)  # 60
+    plot.title = "Edit across the variant texts"
     plot.y_title = "Levenshtein distance (smoothed)"
-    plot.x_title = "Sentences in the text"
+    plot.x_title = "Sentences in order"
     plot.x_labels = lines
     plot.add("Script-Identifiable Edits", script)
     plot.add("Other Edits", other)
