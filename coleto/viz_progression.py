@@ -64,9 +64,11 @@ def define_style():
         background="transparent",
         plot_background="transparent",
         font_family="googlefont:Alegreya",
-        label_font_size=15,
-        major_label_font_size=15,
-        value_font_size=20,
+        label_font_size=30,
+        major_label_font_size=30,
+        value_font_size=40,
+        title_font_size=35
+        
         )
     return mystyle
 
