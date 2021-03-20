@@ -84,7 +84,11 @@ Generally speaking, there are four steps to running coleto.
 
 ### Input files
 
-Place your input data in the right folder. If you're using sample data provided in `coleto/data`, you are all set. If you're ready to analyze your own data, create a new directory on the same level as the sample data directories ('Doyle' and 'Loaisel'), and place a new directory within your new directory called `input`. Then place the two .txt files you would like to compare inside the 'input' directory.
+Place your input data in the right folder. If you're using sample data provided in `coleto/data`, you are all set. 
+
+To analyze your own data, create a new directory on the same level as the sample data directories ('Doyle' and 'Loaisel'), and place a new directory within your new directory called `input`. Then place the two .txt files you would like to compare inside the 'input' directory.
+
+Your text files might have to be renamed first. As Coleto will eventually call one file 'Version1' and the other file 'Version2', it is important to consider this when naming your .txt files. The file you want to be considered 'Version1' of your text should be re-named with a '0' in front of its filename. For instance, '0mysampletext.txt'. Then your second text could be renamed, for instance, '1mysampletext.txt'.
 
 ### Adjust the config file
 
