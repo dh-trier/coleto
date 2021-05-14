@@ -150,13 +150,13 @@ def prepare_complex_data(complexdata):
 
 
 def make_barchart2(data, typesplot):
-    """Creates a barchart for the complex analysis categories."""
+    """Creates a barchart for the semantically open edits categories."""
     config = define_config()
     mystyle = define_style()
     labels = list(data.index)
     values = list(data.loc[:, "counts"])
     plot = pygal.HorizontalBar(config, style=mystyle)
-    plot.title = "Distribution of Complex Edit Types"
+    plot.title = "Frequency of Semantically Open Edits"
     plot.x_labels = labels
     plot.add("types", [
             {"value": values[0], "color": "DarkSlateGray", "label": labels[0]},
@@ -168,12 +168,12 @@ def make_barchart2(data, typesplot):
             {"value": values[6], "color": "DarkSlateGray", "label": labels[6]},
             ], stroke_style={"width": 0})
     plot.render_to_file(typesplot)
-    print("Looking good: complex edit type visualization has been saved.")
+    print("Looking good: semantically open edits visualization has been saved.")
 
 
 def main(params):
-    """Creates several barchars showing the frequencies
-    of various kinds of edits in the data."""
+    """Creates several barcharts showing the frequencies
+    of various kinds of edits in the texts."""
     print("\n== coleto: running viz_distribution. ==")
     statistics = load_statistics(params["simplestatistics_file"])
     selection1 = [
