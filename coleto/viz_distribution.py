@@ -82,7 +82,7 @@ def make_barchart1(data, typesplot):
     labels = list(data.index)
     values = list(data.loc[:, "values"])
     plot = pygal.HorizontalBar(config, style=mystyle)
-    plot.title = "Distribution of Script-Identifiable Edits"
+    plot.title = "Frequency of Script-Identifiable Edits"
     plot.x_labels = labels
     plot.add("types", [
             {"value": values[0], "color": "DarkSlateGray", "label": labels[0]},
