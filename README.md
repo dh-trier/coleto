@@ -8,7 +8,7 @@ Coleto is a text comparison, or collation, tool written in Python and using wdif
 
 ## How to use coleto? Documentation
 
-Information on requirements, installation, and usage can be found in the [how-to](https://github.com/dh-trier/coleto/blob/main/docs/HOWTO.md).
+Information on requirements, installation, and usage can be found in the [how-to](https://github.com/dh-trier/coleto/blob/main/HOWTO.md).
 
 ## Development status and roadmap 
 
