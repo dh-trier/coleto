@@ -84,11 +84,15 @@ Generally speaking, there are four steps to running coleto.
 
 ### Input files
 
-Place your input data in the right folder. If you're using sample data provided in `coleto/data`, you are all set. 
+You will need two .txt files of your variant texts. 
 
-To analyze your own data, create a new directory on the same level as the sample data directories ('Doyle' and 'Loaisel'), and place a new directory within your new directory called `input`. Then place the two .txt files you would like to compare inside the 'input' directory.
+Coleto comes with some sample variant texts in `coleto/data`: Arthur Conan Doyle (English), Joseph Marie Loaisel de Tréogate (French), and Arthur Schnitzler (German).
 
-Your text files might have to be renamed first. As Coleto will eventually call one file 'Version1' and the other file 'Version2', it is important to consider this when naming your .txt files. The file you want to be considered 'Version1' of your text should be re-named with a '0' and underscore in front of its filename. For instance, '0_mysampletext.txt'. Then your second text could be renamed, for instance, '1_mysampletext.txt'.
+To use your own texts, create a new directory (folder) within `coleto/data` and give it a name. Within your new directory, create two new directories (folders): `input` and `output`. Then place the two .txt files you would like to compare inside the 'input' directory.
+
+Your text files might have to be renamed first. As Coleto will eventually call one file 'Version1' and the other file 'Version2', it is important to consider this when naming your .txt files. The file you want to be considered 'Version1' of your text should be re-named with a '0' and underscore in front of its filename. For instance, '0_mysampletext.txt'. Then your second text could be renamed, for instance, '1_mysampletext.txt'. Alternatively, you can name them by year, e.g. 'Frankenstein_1818.txt' and 'Frankenstein_1831.txt'.
+
+Your .txt files should also be encoded in UTF-8. You can check and change the encoding using e.g. Laurence Anthony's EncodeAnt tool: https://www.laurenceanthony.net/software/encodeant/ 
 
 ### Adjust the config file
 
