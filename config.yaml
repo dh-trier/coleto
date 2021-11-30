@@ -2,9 +2,9 @@
 # coleto configuration
 # (Always maintain whitespace after ":"!)
 
-working_directory: ""
-dataset: Loaisel
-language: en
+working_directory: ".."
+dataset: Hansel
+language: de
 smoothing: True
 levenshtein_cutoff: 5
 documentation_mode: minimal

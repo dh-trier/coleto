@@ -27,7 +27,7 @@ import yaml
 
 def load_user_parameters():
     """Loads user-defined parameters from the config.yaml file."""
-    with open(join("config.yaml"),
+    with open(join("..", "config.yaml"),
               "r", encoding="utf8") as infile:
         user_params = yaml.safe_load(infile)
     if len(user_params) > 3:

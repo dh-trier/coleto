@@ -1,0 +1,27 @@
+## coleto documentation for run: 2021-11-30_17-44-23.
+
+- working_directory : ..
+- dataset_directory : ../data/Loaisel
+- input_directory : ../data/Loaisel/input/
+- output_directory : ../data/Loaisel/output/
+- input_file1 : ../data/Loaisel/input/Loaisel_1793.txt
+- input_file2 : ../data/Loaisel/input/Loaisel_1779.txt
+- sentences_file1 : ../data/Loaisel/output/Loaisel_1793_split.txt
+- sentences_file2 : ../data/Loaisel/output/Loaisel_1779_split.txt
+- wdiffed_file : ../data/Loaisel/output/wdiffed.txt
+- analysis_file : ../data/Loaisel/output/diff-analysis.tsv
+- analysissummary_file : ../data/Loaisel/output/diff-summary.tsv
+- levdists_file : ../data/Loaisel/output/diff-levenshtein-data.tsv
+- progressionplot : ../data/Loaisel/output/edits-over-textual-progression.svg
+- simplestatistics_file : ../data/Loaisel/output/diff-simple-statistics.tsv
+- complexstatistics_file : ../data/Loaisel/output/diff-complex-statistics.tsv
+- simpletypesplot : ../data/Loaisel/output/simple-types-plot.svg
+- complextypesplot : ../data/Loaisel/output/complex-types-plot.svg
+- documentation_name : ../data/Loaisel/output/documentation
+- smoothing : True
+- language : en
+- levenshtein_cutoff : 5
+- documentation_mode : minimal
+- timestamp : 2021-11-30_17-44-23
+- numlines : 1557
+- numdifferences : 2615
