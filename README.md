@@ -14,15 +14,15 @@ Coleto also generates a .tsv spreadsheet of the differences between the texts. H
 
 ![Coleto diff table](https://raw.githubusercontent.com/dh-trier/coleto/main/images/coleto_diff_table.png)
 
-## How to use Coleto? Documentation
+## How to use Coleto?
 
-Basically, the user places two .txt files into the right folder, modifies the config.yaml file to point Coleto  to the right folder and language selection (English, French, or German), and then the user runs a single command in their terminal. That's it! Coleto then generates all the visualizations and tables.
+Basically, the user downloads the code from Github here, places two .txt files into the right folder, modifies the config.yaml file to point Coleto  to the right folder and language selection (English, French, or German), and then the user runs a single command in their terminal. That's it! Coleto then generates all the visualizations and tables.
 
 For full requirements, installation, and instructions, see [how-to](https://github.com/dh-trier/coleto/blob/main/HOWTO.md).
 
 ## Development status and roadmap 
 
-Coleto is research software, but is actively being developed as of December 2021.
+Coleto is research software being actively developed as of December 2021.
 
 Next steps on our development roadmap: See the issues and milestones in the [repository's issue tracker](https://github.com/dh-trier/coleto/issues). 
 
