@@ -8,11 +8,11 @@ See: [Erik Ketzan and Christof Schöch, "Classifying and Contextualizing Edits i
 
 This image compares two variants of Andy Weir's science fiction bestseller, *The Martian*. Here, Coleto compares Weir's original self-published version of *The Martian* (2011), and a later, professionally edited and published version (2014, Crown). Note the big spike at the far right — this indicates where an epilogue was removed from the first variant and some text inserted in the second:
 
-!(https://raw.githubusercontent.com/dh-trier/coleto/main/images/coleto_progression.jpg)
+![Coleto progression visualization](https://raw.githubusercontent.com/dh-trier/coleto/main/images/coleto_progression.jpg)
 
 Coleto also generates a .tsv spreadsheet of the differences between the texts. Here, Coleto compares *The Martian* (2014) and *The Martian: Classroom Edition* (2016), which removed and replaced the novel's extensive profanity with "softer" language:
 
-!(https://raw.githubusercontent.com/dh-trier/coleto/main/images/coleto_diff_table.png)
+![Coleto diff table](https://raw.githubusercontent.com/dh-trier/coleto/main/images/coleto_diff_table.png)
 
 ## How to use coleto? Documentation
 
