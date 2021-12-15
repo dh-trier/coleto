@@ -4,7 +4,7 @@ Coleto is a text comparison, or collation, tool written in Python and using wdif
 
 Coleto takes two similar but not identical versions of a text as input, identifies all passages with differences between the two versions, attempts to describe and classify each difference, and visualizes the results. 
 
-See: [Erik Ketzan and Christof Schöch, "Classifying and Contextualizing Edits in Variants with Coleto: Three Versions of Andy Weir’s *The Martian*," Digital Humanities Quarterly 15:4 (2021)](http://digitalhumanities.org/dhq/vol/15/4/000579/000579.html). 
+See: [Erik Ketzan and Christof Schöch, "Classifying and Contextualizing Edits in Variants with Coleto: Three Versions of Andy Weir’s *The Martian*," *Digital Humanities Quarterly* 15:4 (2021)](http://digitalhumanities.org/dhq/vol/15/4/000579/000579.html). 
 
 This image compares two variants of Andy Weir's science fiction bestseller, *The Martian*. Here, Coleto compares Weir's original self-published version of *The Martian* (2011), and a later, professionally edited and published version (2014, Crown). Note the big spike at the far right — this indicates where an epilogue was removed from the first variant and some text inserted in the second:
 
@@ -14,7 +14,7 @@ Coleto also generates a .tsv spreadsheet of the differences between the texts. H
 
 ![Coleto diff table](https://raw.githubusercontent.com/dh-trier/coleto/main/images/coleto_diff_table.png)
 
-## How to use coleto? Documentation
+## How to use Coleto? Documentation
 
 Basically, the user places two .txt files into the right folder, modifies the config.yaml file to point Coleto  to the right folder and language selection (English, French, or German), and then the user runs a single command in their terminal. That's it! Coleto then generates all the visualizations and tables.
 
