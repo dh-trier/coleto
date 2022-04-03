@@ -103,7 +103,7 @@ def main(params):
     plot = pygal.StackedBar(config, style=mystyle, show_legend=True, legend_at_bottom=True, legend_at_bottom_columns=2)  # 60
     plot.title = "Edit across the variant texts"
     plot.y_title = "Levenshtein distance (smoothed)"
-    plot.x_title = "Sentences in order"
+    plot.x_title = "Edits in order"
     plot.x_labels = lines
     plot.add("Script-Identifiable Edits", script)
     plot.add("Other Edits", other)
