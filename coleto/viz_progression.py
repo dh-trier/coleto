@@ -106,6 +106,6 @@ def main(params):
     plot.x_title = "Edits in order"
     plot.x_labels = lines
     plot.add("Script-Identifiable Edits", script)
-    plot.add("Other Edits", other)
+    plot.add("Semantically Open Edits", other)
     plot.render_to_file(params["progressionplot"])
     print("Looking good: The progression visualization has been saved.")
